@@ -1,0 +1,24 @@
+<launch>
+  <!-- By default we do not overwrite the URDF. Change the following to true to change the default behavior -->
+  <arg name="load_robot_description" default="false"/>
+
+  <!-- The name of the parameter under which the URDF is loaded -->
+  <arg name="robot_description" default="robot_description"/>
+
+  <!-- Load universal robot description format (URDF) -->
+  <param if="$(arg load_robot_description)" name="$(arg robot_description)" command="xacro --inorder    end_effector_left:=pal-hey5     end_effector_right:=pal-hey5     ft_sensor_left:=schunk-ft     ft_sensor_right:=schunk-ft     laser_model:=sick-571     camera_model:=orbbec-astra     '$(find tiago_dual_description)/robots/tiago_dual.urdf.xacro'"/>
+
+  <!-- The semantic description that corresponds to the URDF -->
+  <param name="$(arg robot_description)_semantic" textfile="$(find tiago_dual_moveit_config)/config/tiago.srdf" />
+
+  <!-- Load updated joint limits (override information from URDF) -->
+  <group ns="$(arg robot_description)_planning">
+    <rosparam command="load" file="$(find tiago_dual_moveit_config)/config/joint_limits.yaml"/>
+  </group>
+
+  <!-- Load default settings for kinematics; these settings are overridden by settings in a node's namespace -->
+  <group ns="$(arg robot_description)_kinematics">
+    <rosparam command="load" file="$(find tiago_dual_moveit_config)/config/kinematics.yaml"/>
+  </group>
+
+</launch>
