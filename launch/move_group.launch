@@ -1,8 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <launch>
+  <!-- Selector for tiago type -->
+    <arg name="end_effector_left"  default="pal-hey5"/>
+    <arg name="end_effector_right"  default="pal-hey5"/>
+    <arg name="ft_sensor_left"  default="schunk-ft"/>
+    <arg name="ft_sensor_right"  default="schunk-ft"/>
+    <arg name="laser_model"  default="sick-571"/>
+    <arg name="camera_model"  default="orbbec-astra"/>
+  <!-- Use moveit camera manager -->
+  <arg name="camera"  default="false"/>
 
-  <include file="$(find tiago_dual_moveit_config)/launch/planning_context.launch" />
+  <include file="$(find tiago_dual_moveit_config)/launch/planning_context.launch">
+    <arg name="end_effector_left"  value="$(arg end_effector_left)"/>
+    <arg name="end_effector_right"  value="$(arg end_effector_right)"/>
+    <arg name="ft_sensor_left"  value="$(arg ft_sensor_left)"/>
+    <arg name="ft_sensor_right"  value="$(arg ft_sensor_right)"/>
+    <arg name="laser_model"  value="$(arg laser_model)"/>
+    <arg name="camera_model"  value="$(arg camera_model)"/>
 
-  <!-- GDB Debug Option -->
+  </include>
+
+  <!-- GDB Debug Option --> 
   <arg name="debug" default="false" />
   <arg unless="$(arg debug)" name="launch_prefix" value="" />
   <arg     if="$(arg debug)" name="launch_prefix"
@@ -44,16 +62,20 @@
   </include>
 
   <!-- Trajectory Execution Functionality -->
+  <arg name="file_suffix" value="$(eval (end_effector_left + ('' if not ft_sensor_left else '_'+ft_sensor_left) + '_' + end_effector_right + ('' if not ft_sensor_right else '_'+ft_sensor_right)))"/>
   <include ns="move_group" file="$(find tiago_dual_moveit_config)/launch/trajectory_execution.launch.xml" if="$(arg allow_trajectory_execution)">
     <arg name="moveit_manage_controllers" value="true" />
     <arg name="moveit_controller_manager" value="tiago" unless="$(arg fake_execution)"/>
     <arg name="moveit_controller_manager" value="fake" if="$(arg fake_execution)"/>
+    <arg name="robot_sufix" value="$(arg file_suffix)" />
   </include>
 
   <!-- Sensors Functionality -->
-  <include ns="move_group" file="$(find tiago_dual_moveit_config)/launch/sensor_manager.launch.xml" if="$(arg allow_trajectory_execution)">
+  <group if="$(arg camera)">
+    <include ns="move_group" file="$(find tiago_moveit_config)/launch/sensor_manager.launch.xml" if="$(arg allow_trajectory_execution)">
     <arg name="moveit_sensor_manager" value="tiago" />
   </include>
+  </group>
 
   <!-- Start the actual move_group node/action server -->
   <node name="move_group" launch-prefix="$(arg launch_prefix)" pkg="moveit_ros_move_group" type="move_group" respawn="false" output="screen" args="$(arg command_args)">
