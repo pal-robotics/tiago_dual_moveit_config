@@ -2,8 +2,8 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.3.2 (2019-03-26)
+------------------
 * Remove description dependency, it's not needed
 * Contributors: Victor Lopez
 
