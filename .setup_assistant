@@ -8,4 +8,4 @@ moveit_setup_assistant_config:
   CONFIG:
     author_name: Victor Lopez
     author_email: victor.lopez@pal-robotics.com
-    generated_timestamp: 1553278883
+    generated_timestamp: 1555082538
