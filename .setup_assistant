@@ -2,10 +2,10 @@ moveit_setup_assistant_config:
   URDF:
     package: tiago_dual_description
     relative_path: robots/tiago_dual.urdf.xacro
-    xacro_args: "--inorder    end_effector_left:=pal-hey5     end_effector_right:=pal-hey5     ft_sensor_left:=schunk-ft     ft_sensor_right:=schunk-ft     laser_model:=sick-571     camera_model:=orbbec-astra    "
+    xacro_args: "--inorder    end_effector_left:=pal-gripper     end_effector_right:=pal-hey5     ft_sensor_left:=schunk-ft     ft_sensor_right:=schunk-ft     laser_model:=sick-571     camera_model:=orbbec-astra    "
   SRDF:
     relative_path: config/tiago.srdf
   CONFIG:
     author_name: Victor Lopez
     author_email: victor.lopez@pal-robotics.com
-    generated_timestamp: 1555082538
+    generated_timestamp: 1555083229

@@ -148,34 +148,6 @@ left_arm:
     - SPARStwo
   projection_evaluator: joints(arm_left_1_joint,arm_left_2_joint)
   longest_valid_segment_fraction: 0.005
-left_hand:
-  default_planner_config: ""
-  planner_configs:
-    - SBL
-    - EST
-    - LBKPIECE
-    - BKPIECE
-    - KPIECE
-    - RRT
-    - RRTConnect
-    - RRTstar
-    - TRRT
-    - PRM
-    - PRMstar
-    - FMT
-    - BFMT
-    - PDST
-    - STRIDE
-    - BiTRRT
-    - LBTRRT
-    - BiEST
-    - ProjEST
-    - LazyPRM
-    - LazyPRMstar
-    - SPARS
-    - SPARStwo
-  projection_evaluator: joints(hand_left_index_joint,hand_left_mrl_joint)
-  longest_valid_segment_fraction: 0.005
 left_arm_torso:
   default_planner_config: ""
   planner_configs:
@@ -231,34 +203,6 @@ right_arm:
     - SPARS
     - SPARStwo
   projection_evaluator: joints(arm_right_1_joint,arm_right_2_joint)
-  longest_valid_segment_fraction: 0.005
-right_hand:
-  default_planner_config: ""
-  planner_configs:
-    - SBL
-    - EST
-    - LBKPIECE
-    - BKPIECE
-    - KPIECE
-    - RRT
-    - RRTConnect
-    - RRTstar
-    - TRRT
-    - PRM
-    - PRMstar
-    - FMT
-    - BFMT
-    - PDST
-    - STRIDE
-    - BiTRRT
-    - LBTRRT
-    - BiEST
-    - ProjEST
-    - LazyPRM
-    - LazyPRMstar
-    - SPARS
-    - SPARStwo
-  projection_evaluator: joints(hand_right_index_joint,hand_right_mrl_joint)
   longest_valid_segment_fraction: 0.005
 right_arm_torso:
   default_planner_config: ""

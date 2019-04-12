@@ -72,21 +72,39 @@ joint_limits:
     max_velocity: 1.76
     has_acceleration_limits: false
     max_acceleration: 0
-  hand_left_index_joint:
+  # pal-gripper
+  gripper_left_left_finger_joint:
     has_velocity_limits: true
-    max_velocity: 3.35
+    max_velocity: 0.05
     has_acceleration_limits: false
     max_acceleration: 0
-  hand_left_mrl_joint:
+  gripper_left_right_finger_joint:
     has_velocity_limits: true
-    max_velocity: 3.56
+    max_velocity: 0.05
     has_acceleration_limits: false
     max_acceleration: 0
-  hand_left_thumb_joint:
+  gripper_right_left_finger_joint:
     has_velocity_limits: true
-    max_velocity: 3.35
+    max_velocity: 0.05
     has_acceleration_limits: false
     max_acceleration: 0
+  gripper_right_right_finger_joint:
+    has_velocity_limits: true
+    max_velocity: 0.05
+    has_acceleration_limits: false
+    max_acceleration: 0
+  # schunk-wsg
+  gripper_left_finger_joint:
+    has_velocity_limits: true
+    max_velocity: 0.01
+    has_acceleration_limits: false
+    max_acceleration: 0
+  gripper_right_finger_joint:
+    has_velocity_limits: true
+    max_velocity: 0.01
+    has_acceleration_limits: false
+    max_acceleration: 0
+  # pal-hey5
   hand_right_index_joint:
     has_velocity_limits: true
     max_velocity: 3.35
