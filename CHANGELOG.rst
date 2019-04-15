@@ -2,8 +2,8 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.3.3 (2019-04-15)
+------------------
 * Add gripper/gripper srdf
 * Regenerate for more end effector combinations
 * Regenerate for hey5
