@@ -3,13 +3,13 @@
     This is a format for representing semantic information about the robot structure.
     A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
 -->
-<robot name="tiago">
+<robot name="tiago_dual">
     <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
     <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
     <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
     <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
     <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
-    <group name="left_arm">
+    <group name="arm_left">
         <joint name="arm_left_1_joint" />
         <joint name="arm_left_2_joint" />
         <joint name="arm_left_3_joint" />
@@ -30,11 +30,11 @@
         <joint name="gripper_left_left_finger_joint" />
         <joint name="gripper_left_right_finger_joint" />
     </group>
-    <group name="left_arm_torso">
-        <group name="left_arm" />
+    <group name="arm_left_torso">
+        <group name="arm_left" />
         <group name="torso" />
     </group>
-    <group name="right_arm">
+    <group name="arm_right">
         <joint name="arm_right_1_joint" />
         <joint name="arm_right_2_joint" />
         <joint name="arm_right_3_joint" />
@@ -51,8 +51,8 @@
         <joint name="hand_right_thumb_joint" />
         <joint name="hand_right_index_joint" />
     </group>
-    <group name="right_arm_torso">
-        <group name="right_arm" />
+    <group name="arm_right_torso">
+        <group name="arm_right" />
         <group name="torso" />
     </group>
     <group name="torso">
@@ -60,8 +60,8 @@
     </group>
     <group name="both_arms_torso">
         <group name="torso" />
-        <group name="right_arm" />
-        <group name="left_arm" />
+        <group name="arm_right" />
+        <group name="arm_left" />
     </group>
     <!--PASSIVE JOINT: Purpose: this element is used to mark joints that are not actuated-->
     <passive_joint name="hand_right_ring_abd_joint" />

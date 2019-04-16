@@ -1,6 +1,6 @@
 controller_manager_ns: controller_manager
 controller_list:
-  - name: left_arm_controller
+  - name: arm_left_controller
     action_ns: follow_joint_trajectory
     default: True
     type: FollowJointTrajectory
@@ -12,37 +12,11 @@ controller_list:
       - arm_left_5_joint
       - arm_left_6_joint
       - arm_left_7_joint
-  - name: left_arm_torso_controller
+  - name: arm_right_controller
     action_ns: follow_joint_trajectory
     default: True
     type: FollowJointTrajectory
     joints:
-      - torso_lift_joint
-      - arm_left_1_joint
-      - arm_left_2_joint
-      - arm_left_3_joint
-      - arm_left_4_joint
-      - arm_left_5_joint
-      - arm_left_6_joint
-      - arm_left_7_joint
-  - name: right_arm_controller
-    action_ns: follow_joint_trajectory
-    default: True
-    type: FollowJointTrajectory
-    joints:
-      - arm_right_1_joint
-      - arm_right_2_joint
-      - arm_right_3_joint
-      - arm_right_4_joint
-      - arm_right_5_joint
-      - arm_right_6_joint
-      - arm_right_7_joint
-  - name: right_arm_torso_controller
-    action_ns: follow_joint_trajectory
-    default: True
-    type: FollowJointTrajectory
-    joints:
-      - torso_lift_joint
       - arm_right_1_joint
       - arm_right_2_joint
       - arm_right_3_joint
@@ -56,26 +30,6 @@ controller_list:
     type: FollowJointTrajectory
     joints:
       [torso_lift_joint]
-  - name: both_arms_torso_controller
-    action_ns: follow_joint_trajectory
-    default: True
-    type: FollowJointTrajectory
-    joints:
-      - torso_lift_joint
-      - arm_left_1_joint
-      - arm_left_2_joint
-      - arm_left_3_joint
-      - arm_left_4_joint
-      - arm_left_5_joint
-      - arm_left_6_joint
-      - arm_left_7_joint
-      - arm_right_1_joint
-      - arm_right_2_joint
-      - arm_right_3_joint
-      - arm_right_4_joint
-      - arm_right_5_joint
-      - arm_right_6_joint
-      - arm_right_7_joint
 @[if end_effector_left == "pal-gripper"]@
   - name: left_gripper_controller
     action_ns: follow_joint_trajectory

@@ -1,5 +1,5 @@
 controller_list:
-  - name: fake_left_arm_controller
+  - name: fake_arm_left_controller
     joints:
       - arm_left_1_joint
       - arm_left_2_joint
@@ -13,17 +13,7 @@ controller_list:
       - hand_left_index_joint
       - hand_left_mrl_joint
       - hand_left_thumb_joint
-  - name: fake_left_arm_torso_controller
-    joints:
-      - torso_lift_joint
-      - arm_left_1_joint
-      - arm_left_2_joint
-      - arm_left_3_joint
-      - arm_left_4_joint
-      - arm_left_5_joint
-      - arm_left_6_joint
-      - arm_left_7_joint
-  - name: fake_right_arm_controller
+  - name: fake_arm_right_controller
     joints:
       - arm_right_1_joint
       - arm_right_2_joint
@@ -37,33 +27,6 @@ controller_list:
       - hand_right_index_joint
       - hand_right_mrl_joint
       - hand_right_thumb_joint
-  - name: fake_right_arm_torso_controller
-    joints:
-      - torso_lift_joint
-      - arm_right_1_joint
-      - arm_right_2_joint
-      - arm_right_3_joint
-      - arm_right_4_joint
-      - arm_right_5_joint
-      - arm_right_6_joint
-      - arm_right_7_joint
   - name: fake_torso_controller
     joints:
       - torso_lift_joint
-  - name: fake_both_arms_torso_controller
-    joints:
-      - torso_lift_joint
-      - arm_left_1_joint
-      - arm_left_2_joint
-      - arm_left_3_joint
-      - arm_left_4_joint
-      - arm_left_5_joint
-      - arm_left_6_joint
-      - arm_left_7_joint
-      - arm_right_1_joint
-      - arm_right_2_joint
-      - arm_right_3_joint
-      - arm_right_4_joint
-      - arm_right_5_joint
-      - arm_right_6_joint
-      - arm_right_7_joint
