@@ -6,12 +6,12 @@
 
   <!-- Load the controllers -->
   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
-    output="screen" ns="tiago" args="left_arm_controller left_hand_controller left_arm_torso_controller right_arm_controller right_hand_controller right_arm_torso_controller torso_controller both_arms_torso_controller "/>
+    output="screen" ns="tiago_dual" args="left_arm_controller left_hand_controller left_arm_torso_controller right_arm_controller right_hand_controller right_arm_torso_controller torso_controller both_arms_torso_controller "/>
 
   <!-- Convert joint states to TF transforms for rviz, etc -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
     respawn="false" output="screen">
-    <remap from="/joint_states" to="tiago/joint_states" />
+    <remap from="/joint_states" to="tiago_dual/joint_states" />
   </node>
 
 </launch>

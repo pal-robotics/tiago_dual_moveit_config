@@ -20,7 +20,7 @@
 
   </include>
 
-  <!-- GDB Debug Option --> 
+  <!-- GDB Debug Option -->
   <arg name="debug" default="false" />
   <arg unless="$(arg debug)" name="launch_prefix" value="" />
   <arg     if="$(arg debug)" name="launch_prefix"
@@ -65,15 +65,15 @@
   <arg name="file_suffix" value="$(eval (end_effector_left + ('' if not ft_sensor_left else '_'+ft_sensor_left) + '_' + end_effector_right + ('' if not ft_sensor_right else '_'+ft_sensor_right)))"/>
   <include ns="move_group" file="$(find tiago_dual_moveit_config)/launch/trajectory_execution.launch.xml" if="$(arg allow_trajectory_execution)">
     <arg name="moveit_manage_controllers" value="true" />
-    <arg name="moveit_controller_manager" value="tiago" unless="$(arg fake_execution)"/>
+    <arg name="moveit_controller_manager" value="tiago_dual" unless="$(arg fake_execution)"/>
     <arg name="moveit_controller_manager" value="fake" if="$(arg fake_execution)"/>
     <arg name="robot_sufix" value="$(arg file_suffix)" />
   </include>
 
   <!-- Sensors Functionality -->
   <group if="$(arg camera)">
-    <include ns="move_group" file="$(find tiago_moveit_config)/launch/sensor_manager.launch.xml" if="$(arg allow_trajectory_execution)">
-    <arg name="moveit_sensor_manager" value="tiago" />
+    <include ns="move_group" file="$(find tiago_dual_moveit_config)/launch/sensor_manager.launch.xml" if="$(arg allow_trajectory_execution)">
+    <arg name="moveit_sensor_manager" value="tiago_dual" />
   </include>
   </group>
 
