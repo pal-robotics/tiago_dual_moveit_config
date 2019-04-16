@@ -2,6 +2,14 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fix typos
+* Remove unused controllers
+* f
+* Add contorllers.yaml.em
+* Contributors: Victor Lopez
+
 0.3.3 (2019-04-15)
 ------------------
 * Add gripper/gripper srdf
