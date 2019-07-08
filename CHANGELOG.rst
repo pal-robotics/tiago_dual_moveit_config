@@ -2,8 +2,8 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.3.5 (2019-07-08)
+------------------
 * Add srdf for gripper + gripper FT
 * Merge branch 'fix_ikinematic_solver_config' into 'erbium-devel'
   Add KDL config for arms groups
