@@ -2,6 +2,15 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add srdf for gripper + gripper FT
+* Merge branch 'fix_ikinematic_solver_config' into 'erbium-devel'
+  Add KDL config for arms groups
+  See merge request robots/tiago_dual_moveit_config!1
+* Add KDL config for arms groups
+* Contributors: Luca Marchionni, Victor Lopez
+
 0.3.4 (2019-04-16)
 ------------------
 * Fix typos
