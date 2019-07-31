@@ -2,6 +2,14 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'fix-gripper-controller-name' into 'erbium-devel'
+  Fix controller name
+  See merge request robots/tiago_dual_moveit_config!3
+* Fix controller name
+* Contributors: Victor Lopez
+
 0.3.5 (2019-07-08)
 ------------------
 * Add srdf for gripper + gripper FT
