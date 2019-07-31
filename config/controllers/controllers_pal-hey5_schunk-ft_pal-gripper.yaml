@@ -39,7 +39,7 @@ controller_list:
       - hand_left_index_joint
       - hand_left_thumb_joint
       - hand_left_mrl_joint
-  - name: right_gripper_controller
+  - name: gripper_right_controller
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     default: true

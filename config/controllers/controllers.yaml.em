@@ -31,7 +31,7 @@ controller_list:
     joints:
       [torso_lift_joint]
 @[if end_effector_left == "pal-gripper"]@
-  - name: left_gripper_controller
+  - name: gripper_left_controller
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     default: true
@@ -40,7 +40,7 @@ controller_list:
       - gripper_left_right_finger_joint
 @[end if]@
 @[if end_effector_left == "schunk-wsg"]@
-  - name: left_gripper_controller
+  - name: gripper_left_controller
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     default: true
@@ -58,7 +58,7 @@ controller_list:
       - hand_left_mrl_joint
 @[end if]@
 @[if end_effector_right == "pal-gripper"]@
-  - name: right_gripper_controller
+  - name: gripper_right_controller
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     default: true
@@ -67,7 +67,7 @@ controller_list:
       - gripper_right_right_finger_joint
 @[end if]@
 @[if end_effector_right == "schunk-wsg"]@
-  - name: right_gripper_controller
+  - name: gripper_right_controller
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     default: true

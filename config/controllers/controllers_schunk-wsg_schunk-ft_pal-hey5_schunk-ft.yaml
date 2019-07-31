@@ -31,7 +31,7 @@ controller_list:
     type: FollowJointTrajectory
     joints:
       [torso_lift_joint]
-  - name: left_gripper_controller
+  - name: gripper_left_controller
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     default: true
