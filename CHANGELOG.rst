@@ -2,8 +2,8 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.3.7 (2019-08-07)
+------------------
 * Merge branch 'fix_moveit_camera' into 'erbium-devel'
   Fixed the parameters for the moveit camera use for the octomap
   See merge request robots/tiago_dual_moveit_config!4
