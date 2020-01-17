@@ -2,7 +2,7 @@ controller_manager_ns: controller_manager
 controller_list:
   - name: arm_left_controller
     action_ns: follow_joint_trajectory
-    default: True
+    default: true
     type: FollowJointTrajectory
     joints:
       - arm_left_1_joint
@@ -14,7 +14,7 @@ controller_list:
       - arm_left_7_joint
   - name: arm_right_controller
     action_ns: follow_joint_trajectory
-    default: True
+    default: true
     type: FollowJointTrajectory
     joints:
       - arm_right_1_joint
@@ -26,7 +26,7 @@ controller_list:
       - arm_right_7_joint
   - name: torso_controller
     action_ns: follow_joint_trajectory
-    default: True
+    default: true
     type: FollowJointTrajectory
     joints:
       [torso_lift_joint]
