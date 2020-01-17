@@ -2,8 +2,8 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.3.8 (2020-01-17)
+------------------
 * Merge branch 'moveit_fix' into 'erbium-devel'
   fix moveit cartesian goals issue on robot
   See merge request robots/tiago_dual_moveit_config!5
