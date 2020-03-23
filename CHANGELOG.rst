@@ -2,6 +2,11 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add more srdfs
+* Contributors: Victor Lopez
+
 0.3.9 (2020-03-23)
 ------------------
 * Add new srdfs
