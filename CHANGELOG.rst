@@ -2,6 +2,11 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add new srdfs
+* Contributors: Victor Lopez
+
 0.3.8 (2020-01-17)
 ------------------
 * Merge branch 'moveit_fix' into 'erbium-devel'
