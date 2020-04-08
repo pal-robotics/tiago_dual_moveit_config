@@ -2,6 +2,15 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'add-arm-sides' into 'erbium-devel'
+  Add arm sides
+  See merge request robots/tiago_dual_moveit_config!6
+* Add head controller
+* Add no arm versions
+* Contributors: Victor Lopez, victor
+
 0.3.10 (2020-03-23)
 -------------------
 * Add more srdfs
