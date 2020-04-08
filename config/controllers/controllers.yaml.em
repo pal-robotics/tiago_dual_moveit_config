@@ -1,5 +1,6 @@
 controller_manager_ns: controller_manager
 controller_list:
+@[if has_arm_left]@
   - name: arm_left_controller
     action_ns: follow_joint_trajectory
     default: true
@@ -12,6 +13,8 @@ controller_list:
       - arm_left_5_joint
       - arm_left_6_joint
       - arm_left_7_joint
+@[end if]@
+@[if has_arm_right]@
   - name: arm_right_controller
     action_ns: follow_joint_trajectory
     default: true
@@ -24,6 +27,14 @@ controller_list:
       - arm_right_5_joint
       - arm_right_6_joint
       - arm_right_7_joint
+@[end if]@
+  - name: head_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - head_1_joint
+      - head_2_joint
   - name: torso_controller
     action_ns: follow_joint_trajectory
     default: true
