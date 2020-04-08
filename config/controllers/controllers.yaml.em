@@ -28,6 +28,13 @@ controller_list:
       - arm_right_6_joint
       - arm_right_7_joint
 @[end if]@
+  - name: head_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - head_1_joint
+      - head_2_joint
   - name: torso_controller
     action_ns: follow_joint_trajectory
     default: true
