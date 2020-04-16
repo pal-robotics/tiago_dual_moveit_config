@@ -2,6 +2,12 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Update srdf file
+* Added another srdf file
+* Contributors: Victor Lopez
+
 0.3.11 (2020-04-08)
 -------------------
 * Merge branch 'add-arm-sides' into 'erbium-devel'
