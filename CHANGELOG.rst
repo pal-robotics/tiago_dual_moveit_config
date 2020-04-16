@@ -2,8 +2,8 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.3.12 (2020-04-16)
+-------------------
 * Update srdf file
 * Added another srdf file
 * Contributors: Victor Lopez
