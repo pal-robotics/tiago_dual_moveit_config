@@ -2092,6 +2092,7 @@
     <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_thumb_virtual_1_link" reason="Never" />
     <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_thumb_virtual_2_link" reason="Never" />
     <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_safety_box" reason="Never" />
+    <disable_collisions link1="wrist_right_ft_tool_link" link2="arm_right_5_link" reason="Never" />
 
     <disable_collisions link1="wrist_right_ft_link" link2="hand_right_index_abd_link" reason="Never" />
     <disable_collisions link1="wrist_right_ft_link" link2="hand_right_index_flex_1_link" reason="Never" />
