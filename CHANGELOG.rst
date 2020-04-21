@@ -2,6 +2,18 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'templatize-srdf' into 'erbium-devel'
+  Templatize SRDF generation
+  See merge request robots/tiago_dual_moveit_config!7
+* Merge branch 'more-templatize-srdf' into 'templatize-srdf'
+  Reuse generator code for both sides
+  See merge request robots/tiago_dual_moveit_config!8
+* Reuse generator code for both sides
+* Templatize SRDF generation
+* Contributors: Victor Lopez, davidfernandez, victor
+
 0.3.12 (2020-04-16)
 -------------------
 * Update srdf file
