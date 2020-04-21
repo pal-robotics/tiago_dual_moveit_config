@@ -51,8 +51,7 @@
         <link name="gripper_left_left_finger_link" />
         <link name="gripper_left_right_finger_link" />
         <link name="gripper_left_link" />
-        <joint name="gripper_left_left_finger_joint" />
-        <joint name="gripper_left_right_finger_joint" />
+        <joint name="gripper_left_finger_joint" />
     </group>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="gripper_left" parent_link="arm_left_tool_link" group="gripper_left" parent_group="arm_torso" />

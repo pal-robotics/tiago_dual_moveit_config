@@ -51,8 +51,7 @@
         <link name="gripper_left_left_finger_link" />
         <link name="gripper_left_right_finger_link" />
         <link name="gripper_left_link" />
-        <joint name="gripper_left_left_finger_joint" />
-        <joint name="gripper_left_right_finger_joint" />
+        <joint name="gripper_left_finger_joint" />
     </group>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="gripper_left" parent_link="arm_left_tool_link" group="gripper_left" parent_group="arm_torso" />
@@ -3703,94 +3702,6 @@
 
 
 <!-- FT link disable collisions -->
-    <disable_collisions link1="wrist_right_ft_link" link2="arm_right_6_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="arm_right_7_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="arm_right_tool_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="arm_right_6_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="arm_right_7_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="arm_right_tool_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="wrist_right_ft_tool_link" reason="Adjacent" />
 
-    
-        <!-- Disable collisions with FT sensor -->    
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_safety_box" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_palm_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_palm_link" reason="Adjacent" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_index_abd_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_index_flex_1_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_index_flex_2_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_index_flex_3_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_index_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_index_virtual_1_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_index_virtual_2_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_index_virtual_3_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_little_abd_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_little_flex_1_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_little_flex_2_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_little_flex_3_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_little_virtual_1_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_little_virtual_2_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_little_virtual_3_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_middle_abd_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_middle_flex_1_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_middle_flex_2_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_middle_flex_3_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_middle_virtual_1_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_middle_virtual_2_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_middle_virtual_3_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_mrl_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_ring_abd_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_ring_flex_1_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_ring_flex_2_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_ring_flex_3_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_ring_virtual_1_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_ring_virtual_2_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_ring_virtual_3_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_thumb_abd_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_thumb_flex_1_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_thumb_flex_2_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_thumb_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_thumb_virtual_1_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_thumb_virtual_2_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_safety_box" reason="Never" />
-
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_index_abd_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_index_flex_1_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_index_flex_2_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_index_flex_3_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_index_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_index_virtual_1_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_index_virtual_2_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_index_virtual_3_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_little_abd_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_little_flex_1_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_little_flex_2_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_little_flex_3_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_little_virtual_1_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_little_virtual_2_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_little_virtual_3_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_middle_abd_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_middle_flex_1_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_middle_flex_2_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_middle_flex_3_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_middle_virtual_1_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_middle_virtual_2_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_middle_virtual_3_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_mrl_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_ring_abd_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_ring_flex_1_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_ring_flex_2_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_ring_flex_3_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_ring_virtual_1_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_ring_virtual_2_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_ring_virtual_3_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_thumb_abd_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_thumb_flex_1_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_thumb_flex_2_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_thumb_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_thumb_virtual_1_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_thumb_virtual_2_link" reason="Never" />
-    <disable_collisions link1="wrist_right_ft_link" link2="hand_right_safety_box" reason="Never" />
-    
 
 </robot>
