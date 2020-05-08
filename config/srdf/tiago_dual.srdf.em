@@ -3497,9 +3497,11 @@ if side == "right":
 
 <!-- FT link disable collisions -->
 @[if ft_sensor == "schunk-ft"]@
+    <disable_collisions link1="wrist_@(side)_ft_link" link2="arm_@(side)_5_link" reason="Never" />
     <disable_collisions link1="wrist_@(side)_ft_link" link2="arm_@(side)_6_link" reason="Never" />
     <disable_collisions link1="wrist_@(side)_ft_link" link2="arm_@(side)_7_link" reason="Never" />
     <disable_collisions link1="wrist_@(side)_ft_link" link2="arm_@(side)_tool_link" reason="Never" />
+    <disable_collisions link1="wrist_@(side)_ft_tool_link" link2="arm_@(side)_5_link" reason="Never" />
     <disable_collisions link1="wrist_@(side)_ft_tool_link" link2="arm_@(side)_6_link" reason="Never" />
     <disable_collisions link1="wrist_@(side)_ft_tool_link" link2="arm_@(side)_7_link" reason="Never" />
     <disable_collisions link1="wrist_@(side)_ft_tool_link" link2="arm_@(side)_tool_link" reason="Never" />
