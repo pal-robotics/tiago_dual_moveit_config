@@ -2,6 +2,11 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Regenerate srdf after wrist changes
+* Contributors: Victor Lopez
+
 0.3.13 (2020-04-21)
 -------------------
 * Merge branch 'templatize-srdf' into 'erbium-devel'
