@@ -2,8 +2,8 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.3.14 (2020-05-08)
+-------------------
 * Regenerate srdf after wrist changes
 * Contributors: Victor Lopez
 
