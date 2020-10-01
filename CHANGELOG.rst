@@ -2,6 +2,15 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'hey5_marker' into 'erbium-devel'
+  Hey5 marker
+  See merge request robots/tiago_dual_moveit_config!9
+* Autogenerate srdf files
+* Add links for hey5 group
+* Contributors: Adria Roig, victor
+
 0.3.14 (2020-05-08)
 -------------------
 * Regenerate srdf after wrist changes
