@@ -2,8 +2,8 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.3.15 (2020-10-01)
+-------------------
 * Merge branch 'hey5_marker' into 'erbium-devel'
   Hey5 marker
   See merge request robots/tiago_dual_moveit_config!9
