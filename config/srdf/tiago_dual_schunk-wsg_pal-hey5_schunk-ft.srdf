@@ -62,6 +62,10 @@
         <joint name="hand_right_index_joint" />
         <joint name="hand_right_thumb_joint" />
         <joint name="hand_right_mrl_joint" />
+        <link name="hand_right_index_link" />
+        <link name="hand_right_thumb_link" />
+        <link name="hand_right_mrl_link" />
+        <link name="hand_right_palm_link" />
     </group>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="hand_right" parent_link="arm_right_tool_link" group="hand_right" />

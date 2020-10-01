@@ -73,6 +73,10 @@ if side == "right":
         <joint name="hand_@(side)_index_joint" />
         <joint name="hand_@(side)_thumb_joint" />
         <joint name="hand_@(side)_mrl_joint" />
+        <link name="hand_@(side)_index_link" />
+        <link name="hand_@(side)_thumb_link" />
+        <link name="hand_@(side)_mrl_link" />
+        <link name="hand_@(side)_palm_link" />
     </group>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="hand_@(side)" parent_link="arm_@(side)_tool_link" group="hand_@(side)" />
