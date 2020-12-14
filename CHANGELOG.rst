@@ -2,6 +2,15 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'fix-gripper-parent' into 'erbium-devel'
+  Fix gripper parent group
+  See merge request robots/tiago_dual_moveit_config!10
+* Fix gripper parent group
+* Add Readme
+* Contributors: Victor Lopez, davidfernandez, victor
+
 0.3.15 (2020-10-01)
 -------------------
 * Merge branch 'hey5_marker' into 'erbium-devel'
