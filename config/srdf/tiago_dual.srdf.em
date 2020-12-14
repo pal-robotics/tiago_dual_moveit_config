@@ -54,7 +54,7 @@ if side == "right":
         <joint name="gripper_@(side)_right_finger_joint" />
     </group>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="gripper_@(side)" parent_link="arm_@(side)_tool_link" group="gripper_@(side)" parent_group="arm_torso" />
+    <end_effector name="gripper_@(side)" parent_link="arm_@(side)_tool_link" group="gripper_@(side)" parent_group="arm_@(side)_torso" />
 @[end if]@
 @[if end_effector == 'schunk-wsg']@
     <group name="gripper_@(side)">
@@ -64,7 +64,7 @@ if side == "right":
         <joint name="gripper_@(side)_finger_joint" />
     </group>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="gripper_@(side)" parent_link="arm_@(side)_tool_link" group="gripper_@(side)" parent_group="arm_torso" />
+    <end_effector name="gripper_@(side)" parent_link="arm_@(side)_tool_link" group="gripper_@(side)" parent_group="arm_@(side)_torso" />
 @[end if]@
 
 @[if end_effector == 'pal-hey5']@

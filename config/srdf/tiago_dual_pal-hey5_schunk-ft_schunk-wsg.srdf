@@ -103,7 +103,7 @@
         <joint name="gripper_right_finger_joint" />
     </group>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="gripper_right" parent_link="arm_right_tool_link" group="gripper_right" parent_group="arm_torso" />
+    <end_effector name="gripper_right" parent_link="arm_right_tool_link" group="gripper_right" parent_group="arm_right_torso" />
 
 
 
