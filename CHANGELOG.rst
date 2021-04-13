@@ -2,6 +2,16 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'custom-end-effector' into 'erbium-devel'
+  Custom end effector
+  See merge request robots/tiago_dual_moveit_config!11
+* fix: controller not working if only one ee is custom
+* fix: look for proper combiation of ee
+* feat: enable custom end effector
+* Contributors: daniellopez, jordanpalacios
+
 0.3.16 (2020-12-14)
 -------------------
 * Merge branch 'fix-gripper-parent' into 'erbium-devel'
