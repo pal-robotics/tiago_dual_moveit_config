@@ -2,8 +2,8 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.3.17 (2021-04-13)
+-------------------
 * Merge branch 'custom-end-effector' into 'erbium-devel'
   Custom end effector
   See merge request robots/tiago_dual_moveit_config!11
