@@ -66,6 +66,31 @@ if side == "right":
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="gripper_@(side)" parent_link="arm_@(side)_tool_link" group="gripper_@(side)" parent_group="arm_@(side)_torso" />
 @[end if]@
+@[if end_effector in ["robotiq-2f-85", "robotiq-2f-140"]]@
+    <group name="gripper_@(side)">
+        <link name="gripper_@(side)_coupler_link" />
+        <link name="gripper_@(side)_base_link" />
+        <link name="gripper_@(side)_left_outer_knuckle" />
+        <link name="gripper_@(side)_left_outer_finger" />
+        <link name="gripper_@(side)_left_inner_finger" />
+        <link name="gripper_@(side)_left_inner_finger_pad" />
+        <link name="gripper_@(side)_left_inner_knuckle" />
+        <link name="gripper_@(side)_right_inner_knuckle" />
+        <link name="gripper_@(side)_right_outer_knuckle" />
+        <link name="gripper_@(side)_right_outer_finger" />
+        <link name="gripper_@(side)_right_inner_finger" />
+        <link name="gripper_@(side)_right_inner_finger_pad" />
+        <joint name="gripper_@(side)_finger_joint" />
+    </group>
+    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
+    <end_effector name="gripper_@(side)" parent_link="arm_@(side)_tool_link" group="gripper_@(side)" parent_group="arm_@(side)_torso" />
+    <!--PASSIVE JOINT: Purpose: this element is used to mark joints that are not actuated-->
+    <passive_joint name="gripper_@(side)_left_inner_finger_joint" />
+    <passive_joint name="gripper_@(side)_left_inner_knuckle_joint" />
+    <passive_joint name="gripper_@(side)_right_inner_knuckle_joint" />
+    <passive_joint name="gripper_@(side)_right_outer_knuckle_joint" />
+    <passive_joint name="gripper_@(side)_right_inner_finger_joint" />
+@[end if]@
 
 @[if end_effector == 'pal-hey5']@
 
@@ -1103,7 +1128,6 @@ if side == "right":
   @[end if]@
 @[end for]@
 
-
 @[for side in ['left', 'right']]@
 @{
 if side == "left":
@@ -1113,6 +1137,256 @@ if side == "right":
     end_effector = end_effector_right
     ft_sensor = ft_sensor_right
 }@
+@[if end_effector in ["robotiq-2f-85", "robotiq-2f-140"]]@
+    <disable_collisions link1="arm_@(side)_1_link" link2="gripper_@(side)_base_link" reason="Never" />
+    <disable_collisions link1="arm_@(side)_1_link" link2="gripper_@(side)_coupler_link" reason="Never" />
+    <disable_collisions link1="arm_@(side)_1_link" link2="gripper_@(side)_left_inner_finger" reason="Never" />
+    <disable_collisions link1="arm_@(side)_1_link" link2="gripper_@(side)_left_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="arm_@(side)_1_link" link2="gripper_@(side)_left_inner_knuckle" reason="Never" />
+    <disable_collisions link1="arm_@(side)_1_link" link2="gripper_@(side)_left_outer_finger" reason="Never" />
+    <disable_collisions link1="arm_@(side)_1_link" link2="gripper_@(side)_left_outer_knuckle" reason="Never" />
+    <disable_collisions link1="arm_@(side)_1_link" link2="gripper_@(side)_right_inner_knuckle" reason="Never" />
+    <disable_collisions link1="arm_@(side)_1_link" link2="gripper_@(side)_right_outer_finger" reason="Never" />
+    <disable_collisions link1="arm_@(side)_1_link" link2="gripper_@(side)_right_outer_knuckle" reason="Never" />
+    <disable_collisions link1="arm_@(side)_2_link" link2="gripper_@(side)_base_link" reason="Never" />
+    <disable_collisions link1="arm_@(side)_2_link" link2="gripper_@(side)_coupler_link" reason="Never" />
+    <disable_collisions link1="arm_@(side)_2_link" link2="gripper_@(side)_left_inner_finger" reason="Never" />
+    <disable_collisions link1="arm_@(side)_2_link" link2="gripper_@(side)_left_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="arm_@(side)_2_link" link2="gripper_@(side)_left_inner_knuckle" reason="Never" />
+    <disable_collisions link1="arm_@(side)_2_link" link2="gripper_@(side)_left_outer_finger" reason="Never" />
+    <disable_collisions link1="arm_@(side)_2_link" link2="gripper_@(side)_left_outer_knuckle" reason="Never" />
+    <disable_collisions link1="arm_@(side)_2_link" link2="gripper_@(side)_right_inner_finger" reason="Never" />
+    <disable_collisions link1="arm_@(side)_2_link" link2="gripper_@(side)_right_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="arm_@(side)_2_link" link2="gripper_@(side)_right_inner_knuckle" reason="Never" />
+    <disable_collisions link1="arm_@(side)_2_link" link2="gripper_@(side)_right_outer_finger" reason="Never" />
+    <disable_collisions link1="arm_@(side)_2_link" link2="gripper_@(side)_right_outer_knuckle" reason="Never" />
+    <disable_collisions link1="arm_@(side)_3_link" link2="gripper_@(side)_base_link" reason="Never" />
+    <disable_collisions link1="arm_@(side)_3_link" link2="gripper_@(side)_coupler_link" reason="Never" />
+    <disable_collisions link1="arm_@(side)_3_link" link2="gripper_@(side)_left_inner_finger" reason="Never" />
+    <disable_collisions link1="arm_@(side)_3_link" link2="gripper_@(side)_left_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="arm_@(side)_3_link" link2="gripper_@(side)_left_inner_knuckle" reason="Never" />
+    <disable_collisions link1="arm_@(side)_3_link" link2="gripper_@(side)_left_outer_finger" reason="Never" />
+    <disable_collisions link1="arm_@(side)_3_link" link2="gripper_@(side)_left_outer_knuckle" reason="Never" />
+    <disable_collisions link1="arm_@(side)_3_link" link2="gripper_@(side)_right_inner_finger" reason="Never" />
+    <disable_collisions link1="arm_@(side)_3_link" link2="gripper_@(side)_right_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="arm_@(side)_3_link" link2="gripper_@(side)_right_inner_knuckle" reason="Never" />
+    <disable_collisions link1="arm_@(side)_3_link" link2="gripper_@(side)_right_outer_finger" reason="Never" />
+    <disable_collisions link1="arm_@(side)_3_link" link2="gripper_@(side)_right_outer_knuckle" reason="Never" />
+    <disable_collisions link1="arm_@(side)_4_link" link2="gripper_@(side)_base_link" reason="Never" />
+    <disable_collisions link1="arm_@(side)_4_link" link2="gripper_@(side)_coupler_link" reason="Never" />
+    <disable_collisions link1="arm_@(side)_4_link" link2="gripper_@(side)_left_inner_finger" reason="Never" />
+    <disable_collisions link1="arm_@(side)_4_link" link2="gripper_@(side)_left_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="arm_@(side)_4_link" link2="gripper_@(side)_left_inner_knuckle" reason="Never" />
+    <disable_collisions link1="arm_@(side)_4_link" link2="gripper_@(side)_left_outer_finger" reason="Never" />
+    <disable_collisions link1="arm_@(side)_4_link" link2="gripper_@(side)_left_outer_knuckle" reason="Never" />
+    <disable_collisions link1="arm_@(side)_4_link" link2="gripper_@(side)_right_inner_finger" reason="Never" />
+    <disable_collisions link1="arm_@(side)_4_link" link2="gripper_@(side)_right_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="arm_@(side)_4_link" link2="gripper_@(side)_right_inner_knuckle" reason="Never" />
+    <disable_collisions link1="arm_@(side)_4_link" link2="gripper_@(side)_right_outer_finger" reason="Never" />
+    <disable_collisions link1="arm_@(side)_4_link" link2="gripper_@(side)_right_outer_knuckle" reason="Never" />
+    <disable_collisions link1="arm_@(side)_5_link" link2="gripper_@(side)_base_link" reason="Never" />
+    <disable_collisions link1="arm_@(side)_5_link" link2="gripper_@(side)_coupler_link" reason="Never" />
+    <disable_collisions link1="arm_@(side)_5_link" link2="gripper_@(side)_left_inner_finger" reason="Never" />
+    <disable_collisions link1="arm_@(side)_5_link" link2="gripper_@(side)_left_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="arm_@(side)_5_link" link2="gripper_@(side)_left_inner_knuckle" reason="Never" />
+    <disable_collisions link1="arm_@(side)_5_link" link2="gripper_@(side)_left_outer_finger" reason="Never" />
+    <disable_collisions link1="arm_@(side)_5_link" link2="gripper_@(side)_left_outer_knuckle" reason="Never" />
+    <disable_collisions link1="arm_@(side)_5_link" link2="gripper_@(side)_right_inner_finger" reason="Never" />
+    <disable_collisions link1="arm_@(side)_5_link" link2="gripper_@(side)_right_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="arm_@(side)_5_link" link2="gripper_@(side)_right_inner_knuckle" reason="Never" />
+    <disable_collisions link1="arm_@(side)_5_link" link2="gripper_@(side)_right_outer_finger" reason="Never" />
+    <disable_collisions link1="arm_@(side)_5_link" link2="gripper_@(side)_right_outer_knuckle" reason="Never" />
+    <disable_collisions link1="arm_@(side)_6_link" link2="gripper_@(side)_base_link" reason="Never" />
+    <disable_collisions link1="arm_@(side)_6_link" link2="gripper_@(side)_coupler_link" reason="Default" />
+    <disable_collisions link1="arm_@(side)_6_link" link2="gripper_@(side)_left_inner_finger" reason="Never" />
+    <disable_collisions link1="arm_@(side)_6_link" link2="gripper_@(side)_left_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="arm_@(side)_6_link" link2="gripper_@(side)_left_inner_knuckle" reason="Never" />
+    <disable_collisions link1="arm_@(side)_6_link" link2="gripper_@(side)_left_outer_finger" reason="Never" />
+    <disable_collisions link1="arm_@(side)_6_link" link2="gripper_@(side)_left_outer_knuckle" reason="Never" />
+    <disable_collisions link1="arm_@(side)_6_link" link2="gripper_@(side)_right_inner_finger" reason="Never" />
+    <disable_collisions link1="arm_@(side)_6_link" link2="gripper_@(side)_right_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="arm_@(side)_6_link" link2="gripper_@(side)_right_inner_knuckle" reason="Never" />
+    <disable_collisions link1="arm_@(side)_6_link" link2="gripper_@(side)_right_outer_finger" reason="Never" />
+    <disable_collisions link1="arm_@(side)_6_link" link2="gripper_@(side)_right_outer_knuckle" reason="Never" />
+    <disable_collisions link1="arm_@(side)_tool_link" link2="gripper_@(side)_base_link" reason="Never" />
+    <disable_collisions link1="arm_@(side)_tool_link" link2="gripper_@(side)_coupler_link" reason="Adjacent" />
+    <disable_collisions link1="arm_@(side)_tool_link" link2="gripper_@(side)_left_inner_finger" reason="Never" />
+    <disable_collisions link1="arm_@(side)_tool_link" link2="gripper_@(side)_left_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="arm_@(side)_tool_link" link2="gripper_@(side)_left_inner_knuckle" reason="Never" />
+    <disable_collisions link1="arm_@(side)_tool_link" link2="gripper_@(side)_left_outer_finger" reason="Never" />
+    <disable_collisions link1="arm_@(side)_tool_link" link2="gripper_@(side)_left_outer_knuckle" reason="Never" />
+    <disable_collisions link1="arm_@(side)_tool_link" link2="gripper_@(side)_right_inner_finger" reason="Never" />
+    <disable_collisions link1="arm_@(side)_tool_link" link2="gripper_@(side)_right_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="arm_@(side)_tool_link" link2="gripper_@(side)_right_inner_knuckle" reason="Never" />
+    <disable_collisions link1="arm_@(side)_tool_link" link2="gripper_@(side)_right_outer_finger" reason="Never" />
+    <disable_collisions link1="arm_@(side)_tool_link" link2="gripper_@(side)_right_outer_knuckle" reason="Never" />
+    <disable_collisions link1="base_antenna_right_link" link2="gripper_@(side)_coupler_link" reason="Never" />
+    <disable_collisions link1="base_sonar_01_link" link2="gripper_@(side)_base_link" reason="Never" />
+    <disable_collisions link1="base_sonar_01_link" link2="gripper_@(side)_coupler_link" reason="Never" />
+    <disable_collisions link1="base_sonar_01_link" link2="gripper_@(side)_left_inner_finger" reason="Never" />
+    <disable_collisions link1="base_sonar_01_link" link2="gripper_@(side)_left_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="base_sonar_01_link" link2="gripper_@(side)_left_inner_knuckle" reason="Never" />
+    <disable_collisions link1="base_sonar_01_link" link2="gripper_@(side)_left_outer_finger" reason="Never" />
+    <disable_collisions link1="base_sonar_01_link" link2="gripper_@(side)_left_outer_knuckle" reason="Never" />
+    <disable_collisions link1="base_sonar_01_link" link2="gripper_@(side)_right_inner_finger" reason="Never" />
+    <disable_collisions link1="base_sonar_01_link" link2="gripper_@(side)_right_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="base_sonar_01_link" link2="gripper_@(side)_right_inner_knuckle" reason="Never" />
+    <disable_collisions link1="base_sonar_01_link" link2="gripper_@(side)_right_outer_finger" reason="Never" />
+    <disable_collisions link1="base_sonar_01_link" link2="gripper_@(side)_right_outer_knuckle" reason="Never" />
+    <disable_collisions link1="base_sonar_02_link" link2="gripper_@(side)_left_outer_knuckle" reason="Never" />
+    <disable_collisions link1="caster_back_left_1_link" link2="gripper_@(side)_coupler_link" reason="Never" />
+    <disable_collisions link1="caster_back_left_2_link" link2="gripper_@(side)_coupler_link" reason="Never" />
+    <disable_collisions link1="caster_back_right_1_link" link2="gripper_@(side)_base_link" reason="Never" />
+    <disable_collisions link1="caster_back_right_1_link" link2="gripper_@(side)_coupler_link" reason="Never" />
+    <disable_collisions link1="caster_back_right_1_link" link2="gripper_@(side)_left_inner_finger" reason="Never" />
+    <disable_collisions link1="caster_back_right_1_link" link2="gripper_@(side)_left_inner_knuckle" reason="Never" />
+    <disable_collisions link1="caster_back_right_1_link" link2="gripper_@(side)_left_outer_finger" reason="Never" />
+    <disable_collisions link1="caster_back_right_1_link" link2="gripper_@(side)_left_outer_knuckle" reason="Never" />
+    <disable_collisions link1="caster_back_right_1_link" link2="gripper_@(side)_right_inner_finger" reason="Never" />
+    <disable_collisions link1="caster_back_right_1_link" link2="gripper_@(side)_right_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="caster_back_right_1_link" link2="gripper_@(side)_right_inner_knuckle" reason="Never" />
+    <disable_collisions link1="caster_back_right_1_link" link2="gripper_@(side)_right_outer_finger" reason="Never" />
+    <disable_collisions link1="caster_back_right_1_link" link2="gripper_@(side)_right_outer_knuckle" reason="Never" />
+    <disable_collisions link1="caster_back_right_2_link" link2="gripper_@(side)_base_link" reason="Never" />
+    <disable_collisions link1="caster_back_right_2_link" link2="gripper_@(side)_coupler_link" reason="Never" />
+    <disable_collisions link1="caster_back_right_2_link" link2="gripper_@(side)_left_inner_finger" reason="Never" />
+    <disable_collisions link1="caster_back_right_2_link" link2="gripper_@(side)_left_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="caster_back_right_2_link" link2="gripper_@(side)_left_inner_knuckle" reason="Never" />
+    <disable_collisions link1="caster_back_right_2_link" link2="gripper_@(side)_left_outer_finger" reason="Never" />
+    <disable_collisions link1="caster_back_right_2_link" link2="gripper_@(side)_left_outer_knuckle" reason="Never" />
+    <disable_collisions link1="caster_back_right_2_link" link2="gripper_@(side)_right_inner_finger" reason="Never" />
+    <disable_collisions link1="caster_back_right_2_link" link2="gripper_@(side)_right_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="caster_back_right_2_link" link2="gripper_@(side)_right_inner_knuckle" reason="Never" />
+    <disable_collisions link1="caster_back_right_2_link" link2="gripper_@(side)_right_outer_finger" reason="Never" />
+    <disable_collisions link1="caster_back_right_2_link" link2="gripper_@(side)_right_outer_knuckle" reason="Never" />
+    <disable_collisions link1="caster_front_right_1_link" link2="gripper_@(side)_coupler_link" reason="Never" />
+    <disable_collisions link1="caster_front_right_1_link" link2="gripper_@(side)_right_inner_knuckle" reason="Never" />
+    <disable_collisions link1="caster_front_right_1_link" link2="gripper_@(side)_right_outer_finger" reason="Never" />
+    <disable_collisions link1="caster_front_right_1_link" link2="gripper_@(side)_right_outer_knuckle" reason="Never" />
+    <disable_collisions link1="caster_front_right_2_link" link2="gripper_@(side)_base_link" reason="Never" />
+    <disable_collisions link1="caster_front_right_2_link" link2="gripper_@(side)_coupler_link" reason="Never" />
+    <disable_collisions link1="caster_front_right_2_link" link2="gripper_@(side)_right_inner_finger" reason="Never" />
+    <disable_collisions link1="caster_front_right_2_link" link2="gripper_@(side)_right_inner_knuckle" reason="Never" />
+    <disable_collisions link1="caster_front_right_2_link" link2="gripper_@(side)_right_outer_finger" reason="Never" />
+    <disable_collisions link1="caster_front_right_2_link" link2="gripper_@(side)_right_outer_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_base_link" link2="gripper_@(side)_coupler_link" reason="Adjacent" />
+    <disable_collisions link1="gripper_@(side)_base_link" link2="gripper_@(side)_left_inner_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_base_link" link2="gripper_@(side)_left_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_base_link" link2="gripper_@(side)_left_inner_knuckle" reason="Adjacent" />
+    <disable_collisions link1="gripper_@(side)_base_link" link2="gripper_@(side)_left_outer_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_base_link" link2="gripper_@(side)_left_outer_knuckle" reason="Adjacent" />
+    <disable_collisions link1="gripper_@(side)_base_link" link2="gripper_@(side)_right_inner_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_base_link" link2="gripper_@(side)_right_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_base_link" link2="gripper_@(side)_right_inner_knuckle" reason="Adjacent" />
+    <disable_collisions link1="gripper_@(side)_base_link" link2="gripper_@(side)_right_outer_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_base_link" link2="gripper_@(side)_right_outer_knuckle" reason="Adjacent" />
+    <disable_collisions link1="gripper_@(side)_base_link" link2="gripper_right_right_outer_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_coupler_link" link2="gripper_@(side)_left_inner_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_coupler_link" link2="gripper_@(side)_left_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_coupler_link" link2="gripper_@(side)_left_inner_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_coupler_link" link2="gripper_@(side)_left_outer_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_coupler_link" link2="gripper_@(side)_left_outer_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_coupler_link" link2="gripper_@(side)_right_inner_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_coupler_link" link2="gripper_@(side)_right_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_coupler_link" link2="gripper_@(side)_right_inner_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_coupler_link" link2="gripper_@(side)_right_outer_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_coupler_link" link2="gripper_@(side)_right_outer_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_coupler_link" link2="wheel_right_link" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_finger" link2="gripper_@(side)_left_inner_finger_pad" reason="Adjacent" />
+    <disable_collisions link1="gripper_@(side)_left_inner_finger" link2="gripper_@(side)_left_inner_knuckle" reason="Default" />
+    <disable_collisions link1="gripper_@(side)_left_inner_finger" link2="gripper_@(side)_left_outer_finger" reason="Adjacent" />
+    <disable_collisions link1="gripper_@(side)_left_inner_finger" link2="gripper_@(side)_left_outer_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_finger" link2="gripper_@(side)_right_inner_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_finger" link2="gripper_@(side)_right_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_finger" link2="gripper_@(side)_right_inner_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_finger" link2="gripper_@(side)_right_outer_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_finger" link2="gripper_@(side)_right_outer_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_finger" link2="gripper_right_coupler_link" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_finger" link2="gripper_right_left_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_finger" link2="gripper_right_right_outer_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_finger" link2="gripper_right_right_outer_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_finger_pad" link2="gripper_@(side)_left_inner_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_finger_pad" link2="gripper_@(side)_left_outer_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_finger_pad" link2="gripper_@(side)_left_outer_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_finger_pad" link2="gripper_@(side)_right_inner_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_finger_pad" link2="gripper_@(side)_right_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_finger_pad" link2="gripper_@(side)_right_inner_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_finger_pad" link2="gripper_@(side)_right_outer_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_finger_pad" link2="gripper_@(side)_right_outer_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_finger_pad" link2="gripper_right_coupler_link" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_finger_pad" link2="gripper_right_right_outer_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_knuckle" link2="gripper_@(side)_left_outer_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_knuckle" link2="gripper_@(side)_left_outer_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_knuckle" link2="gripper_@(side)_right_inner_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_knuckle" link2="gripper_@(side)_right_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_knuckle" link2="gripper_@(side)_right_inner_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_knuckle" link2="gripper_@(side)_right_outer_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_knuckle" link2="gripper_@(side)_right_outer_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_knuckle" link2="gripper_right_left_inner_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_knuckle" link2="gripper_right_left_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_knuckle" link2="gripper_right_left_outer_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_knuckle" link2="gripper_right_right_inner_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_knuckle" link2="gripper_right_right_outer_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_knuckle" link2="gripper_right_right_outer_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_finger" link2="gripper_@(side)_left_outer_knuckle" reason="Adjacent" />
+    <disable_collisions link1="gripper_@(side)_left_outer_finger" link2="gripper_@(side)_right_inner_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_finger" link2="gripper_@(side)_right_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_finger" link2="gripper_@(side)_right_inner_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_finger" link2="gripper_@(side)_right_outer_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_finger" link2="gripper_@(side)_right_outer_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_finger" link2="gripper_right_base_link" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_finger" link2="gripper_right_coupler_link" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_finger" link2="gripper_right_left_inner_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_finger" link2="gripper_right_left_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_finger" link2="gripper_right_left_inner_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_finger" link2="gripper_right_right_inner_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_finger" link2="gripper_right_right_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_finger" link2="gripper_right_right_inner_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_finger" link2="gripper_right_right_outer_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_finger" link2="gripper_right_right_outer_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_knuckle" link2="gripper_@(side)_right_inner_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_knuckle" link2="gripper_@(side)_right_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_knuckle" link2="gripper_@(side)_right_inner_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_knuckle" link2="gripper_@(side)_right_outer_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_knuckle" link2="gripper_@(side)_right_outer_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_knuckle" link2="gripper_right_base_link" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_knuckle" link2="gripper_right_left_inner_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_knuckle" link2="gripper_right_left_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_knuckle" link2="gripper_right_left_inner_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_knuckle" link2="gripper_right_left_outer_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_knuckle" link2="gripper_right_left_outer_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_knuckle" link2="gripper_right_right_inner_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_knuckle" link2="gripper_right_right_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_knuckle" link2="gripper_right_right_inner_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_knuckle" link2="gripper_right_right_outer_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_knuckle" link2="gripper_right_right_outer_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_right_inner_finger" link2="gripper_@(side)_right_inner_finger_pad" reason="Adjacent" />
+    <disable_collisions link1="gripper_@(side)_right_inner_finger" link2="gripper_@(side)_right_inner_knuckle" reason="Default" />
+    <disable_collisions link1="gripper_@(side)_right_inner_finger" link2="gripper_@(side)_right_outer_finger" reason="Adjacent" />
+    <disable_collisions link1="gripper_@(side)_right_inner_finger" link2="gripper_@(side)_right_outer_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_right_inner_finger" link2="gripper_right_left_outer_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_right_inner_finger" link2="gripper_right_right_outer_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_right_inner_finger_pad" link2="gripper_@(side)_right_inner_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_right_inner_finger_pad" link2="gripper_@(side)_right_outer_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_right_inner_finger_pad" link2="gripper_@(side)_right_outer_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_right_inner_finger_pad" link2="gripper_right_left_outer_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_right_inner_finger_pad" link2="gripper_right_right_inner_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_right_inner_finger_pad" link2="gripper_right_right_outer_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_right_inner_finger_pad" link2="gripper_right_right_outer_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_right_inner_knuckle" link2="gripper_@(side)_right_outer_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_right_inner_knuckle" link2="gripper_@(side)_right_outer_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_right_inner_knuckle" link2="gripper_right_left_inner_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_right_inner_knuckle" link2="gripper_right_left_outer_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_right_inner_knuckle" link2="gripper_right_right_inner_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_right_inner_knuckle" link2="gripper_right_right_inner_finger_pad" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_right_outer_finger" link2="gripper_@(side)_right_outer_knuckle" reason="Adjacent" />
+    <disable_collisions link1="gripper_@(side)_right_outer_finger" link2="gripper_right_left_outer_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_right_outer_knuckle" link2="gripper_right_left_outer_finger" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_right_outer_knuckle" link2="gripper_right_left_outer_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_right_outer_knuckle" link2="gripper_right_right_outer_knuckle" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_right_outer_knuckle" link2="wheel_right_link" reason="Never" />
+@[end if]@
+
 @[if end_effector == "pal-hey5"]@
     <disable_collisions link1="arm_@(side)_1_link" link2="hand_@(side)_index_link" reason="Never" />
     <disable_collisions link1="arm_@(side)_1_link" link2="hand_@(side)_little_abd_link" reason="Never" />
@@ -3511,16 +3785,41 @@ if side == "right":
     <disable_collisions link1="wrist_@(side)_ft_tool_link" link2="arm_@(side)_tool_link" reason="Never" />
     <disable_collisions link1="wrist_@(side)_ft_link" link2="wrist_@(side)_ft_tool_link" reason="Adjacent" />
 
-    @[if end_effector in ['pal-gripper', 'schunk-wsg']]@    
+@[if end_effector in ['pal-gripper', 'schunk-wsg']]@    
     <disable_collisions link1="wrist_@(side)_ft_link" link2="gripper_@(side)_link" reason="Never" />
     <disable_collisions link1="wrist_@(side)_ft_link" link2="gripper_@(side)_right_finger_link" reason="Never" />
     <disable_collisions link1="wrist_@(side)_ft_link" link2="gripper_@(side)_left_finger_link" reason="Never" />
     <disable_collisions link1="wrist_@(side)_ft_tool_link" link2="gripper_@(side)_link" reason="Never" />
     <disable_collisions link1="wrist_@(side)_ft_tool_link" link2="gripper_@(side)_right_finger_link" reason="Never" />
     <disable_collisions link1="wrist_@(side)_ft_tool_link" link2="gripper_@(side)_left_finger_link" reason="Never" />
-    @[end if]@
-
-    @[if end_effector == "pal-hey5"]@
+@[end if]@
+@[if end_effector in ["robotiq-2f-85", "robotiq-2f-140"]]@
+    <disable_collisions link1="gripper_@(side)_base_link" link2="wrist_@(side)_ft_link" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_base_link" link2="wrist_@(side)_ft_tool_link" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_coupler_link" link2="wrist_@(side)_ft_link" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_coupler_link" link2="wrist_@(side)_ft_tool_link" reason="Adjacent" />
+    <disable_collisions link1="gripper_@(side)_left_inner_finger" link2="wrist_@(side)_ft_link" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_finger" link2="wrist_@(side)_ft_tool_link" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_finger_pad" link2="wrist_@(side)_ft_link" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_finger_pad" link2="wrist_@(side)_ft_tool_link" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_knuckle" link2="wrist_@(side)_ft_link" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_inner_knuckle" link2="wrist_@(side)_ft_tool_link" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_finger" link2="wrist_@(side)_ft_link" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_finger" link2="wrist_@(side)_ft_tool_link" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_knuckle" link2="wrist_@(side)_ft_link" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_left_outer_knuckle" link2="wrist_@(side)_ft_tool_link" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_right_inner_finger" link2="wrist_@(side)_ft_link" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_right_inner_finger" link2="wrist_@(side)_ft_tool_link" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_right_inner_finger_pad" link2="wrist_@(side)_ft_link" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_right_inner_finger_pad" link2="wrist_@(side)_ft_tool_link" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_right_inner_knuckle" link2="wrist_@(side)_ft_link" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_right_inner_knuckle" link2="wrist_@(side)_ft_tool_link" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_right_outer_finger" link2="wrist_@(side)_ft_link" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_right_outer_finger" link2="wrist_@(side)_ft_tool_link" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_right_outer_knuckle" link2="wrist_@(side)_ft_link" reason="Never" />
+    <disable_collisions link1="gripper_@(side)_right_outer_knuckle" link2="wrist_@(side)_ft_tool_link" reason="Never" />
+@[end if]@
+@[if end_effector == "pal-hey5"]@
     <!-- Disable collisions with FT sensor -->    
     <disable_collisions link1="wrist_@(side)_ft_link" link2="hand_@(side)_safety_box" reason="Never" />
     <disable_collisions link1="wrist_@(side)_ft_link" link2="hand_@(side)_palm_link" reason="Never" />
@@ -3600,7 +3899,7 @@ if side == "right":
     <disable_collisions link1="wrist_@(side)_ft_link" link2="hand_@(side)_thumb_virtual_1_link" reason="Never" />
     <disable_collisions link1="wrist_@(side)_ft_link" link2="hand_@(side)_thumb_virtual_2_link" reason="Never" />
     <disable_collisions link1="wrist_@(side)_ft_link" link2="hand_@(side)_safety_box" reason="Never" />
-    @[end if]@
+@[end if]@
 @[end if]@
 @[end for]@
 
