@@ -2,6 +2,15 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'robotiq_gripper' into 'erbium-devel'
+  Robotiq gripper
+  See merge request robots/tiago_dual_moveit_config!13
+* generated the controllers config files for new combinations of the robotiq gripper 85 and 140
+* added the combinations of the robotiq gripper SRDF
+* Contributors: Sai Kishor Kothakota, saikishor
+
 0.3.17 (2021-04-13)
 -------------------
 * Merge branch 'custom-end-effector' into 'erbium-devel'
