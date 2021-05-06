@@ -3610,6 +3610,7 @@
 
 
 <!-- FT link disable collisions -->
+
     <disable_collisions link1="arm_right_1_link" link2="hand_right_index_link" reason="Never" />
     <disable_collisions link1="arm_right_1_link" link2="hand_right_little_abd_link" reason="Never" />
     <disable_collisions link1="arm_right_1_link" link2="hand_right_little_virtual_1_link" reason="Never" />

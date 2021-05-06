@@ -50,7 +50,7 @@ controller_list:
       - gripper_left_left_finger_joint
       - gripper_left_right_finger_joint
 @[end if]@
-@[if end_effector_left == "schunk-wsg"]@
+@[if end_effector_left in ["schunk-wsg", "robotiq-2f-85", "robotiq-2f-140"]]@
   - name: gripper_left_controller
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
@@ -77,7 +77,7 @@ controller_list:
       - gripper_right_left_finger_joint
       - gripper_right_right_finger_joint
 @[end if]@
-@[if end_effector_right == "schunk-wsg"]@
+@[if end_effector_right in ["schunk-wsg", "robotiq-2f-85", "robotiq-2f-140"]]@
   - name: gripper_right_controller
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
