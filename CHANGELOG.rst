@@ -2,6 +2,11 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fixes to demo.launch
+* Contributors: Victor Lopez
+
 0.4.0 (2021-05-06)
 ------------------
 * Merge branch 'robotiq_gripper' into 'erbium-devel'
