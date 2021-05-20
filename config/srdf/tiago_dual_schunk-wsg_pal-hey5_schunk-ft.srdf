@@ -1267,7 +1267,6 @@
     <disable_collisions link1="gripper_left_left_finger_link" link2="xtion_depth_optical_frame" reason="Never"/>
     <disable_collisions link1="gripper_left_left_finger_link" link2="xtion_rgb_frame" reason="Never"/>
     <disable_collisions link1="gripper_left_left_finger_link" link2="xtion_rgb_optical_frame" reason="Never"/>
-    <disable_collisions link1="gripper_left_left_finger_link" link2="gripper_grasping_frame" reason="Never"/>
 
     <disable_collisions link1="arm_left_tool_link" link2="gripper_left_left_finger_link" reason="Never" />
     <disable_collisions link1="arm_left_tool_link" link2="gripper_left_link" reason="Adjacent" />
@@ -3701,7 +3700,7 @@
     <disable_collisions link1="wrist_right_ft_tool_link" link2="arm_right_tool_link" reason="Never" />
     <disable_collisions link1="wrist_right_ft_link" link2="wrist_right_ft_tool_link" reason="Adjacent" />
 
-    <!-- Disable collisions with FT sensor -->    
+    <!-- Disable collisions with FT sensor -->
     <disable_collisions link1="wrist_right_ft_link" link2="hand_right_safety_box" reason="Never" />
     <disable_collisions link1="wrist_right_ft_link" link2="hand_right_palm_link" reason="Never" />
     <disable_collisions link1="wrist_right_ft_tool_link" link2="hand_right_palm_link" reason="Adjacent" />

@@ -1092,7 +1092,6 @@ if side == "right":
     <disable_collisions link1="gripper_@(side)_left_finger_link" link2="xtion_depth_optical_frame" reason="Never"/>
     <disable_collisions link1="gripper_@(side)_left_finger_link" link2="xtion_rgb_frame" reason="Never"/>
     <disable_collisions link1="gripper_@(side)_left_finger_link" link2="xtion_rgb_optical_frame" reason="Never"/>
-    <disable_collisions link1="gripper_@(side)_left_finger_link" link2="gripper_grasping_frame" reason="Never"/>
 
     <disable_collisions link1="arm_@(side)_tool_link" link2="gripper_@(side)_left_finger_link" reason="Never" />
     <disable_collisions link1="arm_@(side)_tool_link" link2="gripper_@(side)_link" reason="Adjacent" />
@@ -3785,7 +3784,7 @@ if side == "right":
     <disable_collisions link1="wrist_@(side)_ft_tool_link" link2="arm_@(side)_tool_link" reason="Never" />
     <disable_collisions link1="wrist_@(side)_ft_link" link2="wrist_@(side)_ft_tool_link" reason="Adjacent" />
 
-@[if end_effector in ['pal-gripper', 'schunk-wsg']]@    
+@[if end_effector in ['pal-gripper', 'schunk-wsg']]@
     <disable_collisions link1="wrist_@(side)_ft_link" link2="gripper_@(side)_link" reason="Never" />
     <disable_collisions link1="wrist_@(side)_ft_link" link2="gripper_@(side)_right_finger_link" reason="Never" />
     <disable_collisions link1="wrist_@(side)_ft_link" link2="gripper_@(side)_left_finger_link" reason="Never" />
@@ -3820,7 +3819,7 @@ if side == "right":
     <disable_collisions link1="gripper_@(side)_right_outer_knuckle" link2="wrist_@(side)_ft_tool_link" reason="Never" />
 @[end if]@
 @[if end_effector == "pal-hey5"]@
-    <!-- Disable collisions with FT sensor -->    
+    <!-- Disable collisions with FT sensor -->
     <disable_collisions link1="wrist_@(side)_ft_link" link2="hand_@(side)_safety_box" reason="Never" />
     <disable_collisions link1="wrist_@(side)_ft_link" link2="hand_@(side)_palm_link" reason="Never" />
     <disable_collisions link1="wrist_@(side)_ft_tool_link" link2="hand_@(side)_palm_link" reason="Adjacent" />
