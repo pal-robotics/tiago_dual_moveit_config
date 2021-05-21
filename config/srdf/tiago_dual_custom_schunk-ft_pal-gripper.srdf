@@ -1220,7 +1220,6 @@
     <disable_collisions link1="gripper_right_left_finger_link" link2="xtion_depth_optical_frame" reason="Never"/>
     <disable_collisions link1="gripper_right_left_finger_link" link2="xtion_rgb_frame" reason="Never"/>
     <disable_collisions link1="gripper_right_left_finger_link" link2="xtion_rgb_optical_frame" reason="Never"/>
-    <disable_collisions link1="gripper_right_left_finger_link" link2="gripper_grasping_frame" reason="Never"/>
 
     <disable_collisions link1="arm_right_tool_link" link2="gripper_right_left_finger_link" reason="Never" />
     <disable_collisions link1="arm_right_tool_link" link2="gripper_right_link" reason="Adjacent" />
