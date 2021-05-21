@@ -2,8 +2,8 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.4.2 (2021-05-21)
+------------------
 * Merge branch 'remove_grasping_frame' into 'erbium-devel'
   chore: removed the non-existing grasping_frame
   See merge request robots/tiago_dual_moveit_config!14
