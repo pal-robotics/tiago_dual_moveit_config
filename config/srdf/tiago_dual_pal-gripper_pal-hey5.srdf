@@ -55,7 +55,7 @@
         <joint name="gripper_left_right_finger_joint" />
     </group>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="gripper_left" parent_link="arm_left_tool_link" group="gripper_left" parent_group="arm_torso" />
+    <end_effector name="gripper_left" parent_link="arm_left_tool_link" group="gripper_left" parent_group="arm_left_torso" />
 
 
 
@@ -1268,7 +1268,6 @@
     <disable_collisions link1="gripper_left_left_finger_link" link2="xtion_depth_optical_frame" reason="Never"/>
     <disable_collisions link1="gripper_left_left_finger_link" link2="xtion_rgb_frame" reason="Never"/>
     <disable_collisions link1="gripper_left_left_finger_link" link2="xtion_rgb_optical_frame" reason="Never"/>
-    <disable_collisions link1="gripper_left_left_finger_link" link2="gripper_grasping_frame" reason="Never"/>
 
     <disable_collisions link1="arm_left_tool_link" link2="gripper_left_left_finger_link" reason="Never" />
     <disable_collisions link1="arm_left_tool_link" link2="gripper_left_link" reason="Adjacent" />
@@ -1306,6 +1305,7 @@
 
 
 <!-- FT link disable collisions -->
+
     <disable_collisions link1="arm_right_1_link" link2="hand_right_index_link" reason="Never" />
     <disable_collisions link1="arm_right_1_link" link2="hand_right_little_abd_link" reason="Never" />
     <disable_collisions link1="arm_right_1_link" link2="hand_right_little_virtual_1_link" reason="Never" />

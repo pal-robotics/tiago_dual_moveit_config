@@ -15,19 +15,20 @@
 
   <!-- Load universal robot description format (URDF) -->
   <group if="$(arg load_robot_description)">
-    <include file="$(find tiago_description)/robots/upload.launch">
+    <include file="$(find tiago_dual_description)/robots/upload.launch">
     <arg name="end_effector_left"  value="$(arg end_effector_left)"/>
     <arg name="end_effector_right"  value="$(arg end_effector_right)"/>
     <arg name="ft_sensor_left"  value="$(arg ft_sensor_left)"/>
     <arg name="ft_sensor_right"  value="$(arg ft_sensor_right)"/>
     <arg name="laser_model"  value="$(arg laser_model)"/>
     <arg name="camera_model"  value="$(arg camera_model)"/>
+    <arg name="robot_description"  value="$(arg robot_description)"/>
     </include>
-    <param if="$(arg load_robot_description)" name="$(arg robot_description)" command="$(find xacro)/xacro.py '$(find tiago_description)/robots/tiago_$(arg robot).urdf.xacro' have_base_rgbd:=false"/>
   </group>
 
   <!-- The semantic description that corresponds to the URDF -->
-  <param name="$(arg robot_description)_semantic" textfile="$(find tiago_dual_moveit_config)/config/srdf/tiago_dual_$(arg file_suffix).srdf" />
+  <param if="$(eval end_effector_left != 'custom' and end_effector_right != 'custom')" name="$(arg robot_description)_semantic" textfile="$(find tiago_dual_moveit_config)/config/srdf/tiago_dual_$(arg file_suffix).srdf" />
+  <param if="$(eval end_effector_left == 'custom' or end_effector_right == 'custom')" name="$(arg robot_description)_semantic" textfile="$(find moveit_custom_dual_config)/config/srdf/tiago_dual_$(arg file_suffix).srdf" />
 
   <!-- Load updated joint limits (override information from URDF) -->
   <group ns="$(arg robot_description)_planning">

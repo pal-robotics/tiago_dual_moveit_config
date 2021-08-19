@@ -2,6 +2,48 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.4.2 (2021-05-21)
+------------------
+* Merge branch 'remove_grasping_frame' into 'erbium-devel'
+  chore: removed the non-existing grasping_frame
+  See merge request robots/tiago_dual_moveit_config!14
+* chore: removed the non-existing grasping_frame
+* Add note about no_safety_eps
+* Contributors: Victor Lopez, saikishor, yueerro
+
+0.4.1 (2021-05-18)
+------------------
+* Fixes to demo.launch
+* Contributors: Victor Lopez
+
+0.4.0 (2021-05-06)
+------------------
+* Merge branch 'robotiq_gripper' into 'erbium-devel'
+  Robotiq gripper
+  See merge request robots/tiago_dual_moveit_config!13
+* generated the controllers config files for new combinations of the robotiq gripper 85 and 140
+* added the combinations of the robotiq gripper SRDF
+* Contributors: Sai Kishor Kothakota, saikishor
+
+0.3.17 (2021-04-13)
+-------------------
+* Merge branch 'custom-end-effector' into 'erbium-devel'
+  Custom end effector
+  See merge request robots/tiago_dual_moveit_config!11
+* fix: controller not working if only one ee is custom
+* fix: look for proper combiation of ee
+* feat: enable custom end effector
+* Contributors: daniellopez, jordanpalacios
+
+0.3.16 (2020-12-14)
+-------------------
+* Merge branch 'fix-gripper-parent' into 'erbium-devel'
+  Fix gripper parent group
+  See merge request robots/tiago_dual_moveit_config!10
+* Fix gripper parent group
+* Add Readme
+* Contributors: Victor Lopez, davidfernandez, victor
+
 0.3.15 (2020-10-01)
 -------------------
 * Merge branch 'hey5_marker' into 'erbium-devel'

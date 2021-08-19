@@ -55,7 +55,7 @@
         <joint name="gripper_left_right_finger_joint" />
     </group>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="gripper_left" parent_link="arm_left_tool_link" group="gripper_left" parent_group="arm_torso" />
+    <end_effector name="gripper_left" parent_link="arm_left_tool_link" group="gripper_left" parent_group="arm_left_torso" />
 
     <group name="gripper_right">
         <link name="gripper_right_left_finger_link" />
@@ -64,7 +64,7 @@
         <joint name="gripper_right_finger_joint" />
     </group>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="gripper_right" parent_link="arm_right_tool_link" group="gripper_right" parent_group="arm_torso" />
+    <end_effector name="gripper_right" parent_link="arm_right_tool_link" group="gripper_right" parent_group="arm_right_torso" />
 
 
 
@@ -1228,7 +1228,6 @@
     <disable_collisions link1="gripper_left_left_finger_link" link2="xtion_depth_optical_frame" reason="Never"/>
     <disable_collisions link1="gripper_left_left_finger_link" link2="xtion_rgb_frame" reason="Never"/>
     <disable_collisions link1="gripper_left_left_finger_link" link2="xtion_rgb_optical_frame" reason="Never"/>
-    <disable_collisions link1="gripper_left_left_finger_link" link2="gripper_grasping_frame" reason="Never"/>
 
     <disable_collisions link1="arm_left_tool_link" link2="gripper_left_left_finger_link" reason="Never" />
     <disable_collisions link1="arm_left_tool_link" link2="gripper_left_link" reason="Adjacent" />
@@ -1345,7 +1344,6 @@
     <disable_collisions link1="gripper_right_left_finger_link" link2="xtion_depth_optical_frame" reason="Never"/>
     <disable_collisions link1="gripper_right_left_finger_link" link2="xtion_rgb_frame" reason="Never"/>
     <disable_collisions link1="gripper_right_left_finger_link" link2="xtion_rgb_optical_frame" reason="Never"/>
-    <disable_collisions link1="gripper_right_left_finger_link" link2="gripper_grasping_frame" reason="Never"/>
 
     <disable_collisions link1="arm_right_tool_link" link2="gripper_right_left_finger_link" reason="Never" />
     <disable_collisions link1="arm_right_tool_link" link2="gripper_right_link" reason="Adjacent" />
@@ -1393,15 +1391,14 @@
     <disable_collisions link1="wrist_left_ft_tool_link" link2="arm_left_tool_link" reason="Never" />
     <disable_collisions link1="wrist_left_ft_link" link2="wrist_left_ft_tool_link" reason="Adjacent" />
 
-       
     <disable_collisions link1="wrist_left_ft_link" link2="gripper_left_link" reason="Never" />
     <disable_collisions link1="wrist_left_ft_link" link2="gripper_left_right_finger_link" reason="Never" />
     <disable_collisions link1="wrist_left_ft_link" link2="gripper_left_left_finger_link" reason="Never" />
     <disable_collisions link1="wrist_left_ft_tool_link" link2="gripper_left_link" reason="Never" />
     <disable_collisions link1="wrist_left_ft_tool_link" link2="gripper_left_right_finger_link" reason="Never" />
     <disable_collisions link1="wrist_left_ft_tool_link" link2="gripper_left_left_finger_link" reason="Never" />
-    
-    
+
+
 
 <!-- FT link disable collisions -->
     <disable_collisions link1="wrist_right_ft_link" link2="arm_right_5_link" reason="Never" />
@@ -1414,14 +1411,12 @@
     <disable_collisions link1="wrist_right_ft_tool_link" link2="arm_right_tool_link" reason="Never" />
     <disable_collisions link1="wrist_right_ft_link" link2="wrist_right_ft_tool_link" reason="Adjacent" />
 
-       
     <disable_collisions link1="wrist_right_ft_link" link2="gripper_right_link" reason="Never" />
     <disable_collisions link1="wrist_right_ft_link" link2="gripper_right_right_finger_link" reason="Never" />
     <disable_collisions link1="wrist_right_ft_link" link2="gripper_right_left_finger_link" reason="Never" />
     <disable_collisions link1="wrist_right_ft_tool_link" link2="gripper_right_link" reason="Never" />
     <disable_collisions link1="wrist_right_ft_tool_link" link2="gripper_right_right_finger_link" reason="Never" />
     <disable_collisions link1="wrist_right_ft_tool_link" link2="gripper_right_left_finger_link" reason="Never" />
-    
-    
+
 
 </robot>
