@@ -10,6 +10,9 @@
     <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
     <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
     <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+    <group name="base">
+        <joint name="world_joint" />
+    </group>
     <group name="arm_left">
         <joint name="arm_left_1_joint" />
         <joint name="arm_left_2_joint" />
@@ -97,7 +100,8 @@
     <passive_joint name="hand_left_thumb_virtual_1_joint" />
     <passive_joint name="hand_left_thumb_virtual_2_joint" />
 
-
+    <virtual_joint name="world_joint" type="planar" parent_frame="map" child_link="base_footprint" />
+    <passive_joint name="world_joint" />
 
 
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
