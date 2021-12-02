@@ -2,6 +2,15 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'add_base_type' into 'erbium-devel'
+  Add base_type argument to the moveit launch files
+  Closes #1
+  See merge request robots/tiago_dual_moveit_config!15
+* Add base_type argument to the moveit launch files
+* Contributors: Sai Kishor Kothakota, victor
+
 0.4.2 (2021-05-21)
 ------------------
 * Merge branch 'remove_grasping_frame' into 'erbium-devel'
