@@ -10,7 +10,7 @@
     <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
     <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
 @[for side in ['left', 'right']]@
-@[if `"has_arm_" + side`]@
+@[if repr("has_arm_" + side)]@
     <group name="arm_@(side)">
         <joint name="arm_@(side)_1_joint" />
         <joint name="arm_@(side)_2_joint" />
@@ -712,7 +712,7 @@ if side == "left":
 if side == "right":
     end_effector = end_effector_right
 }@
-    @[if `"has_arm_" + side`]@
+    @[if repr("has_arm_" + side)]@
     <disable_collisions link1="arm_@(side)_1_link" link2="arm_@(side)_2_link" reason="Adjacent" />
     <disable_collisions link1="arm_@(side)_1_link" link2="arm_@(side)_3_link" reason="Never" />
     <disable_collisions link1="arm_@(side)_1_link" link2="arm_@(side)_4_link" reason="Never" />
