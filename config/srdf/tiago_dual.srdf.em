@@ -143,7 +143,8 @@ if side == "right":
     <passive_joint name="hand_@(side)_thumb_virtual_2_joint" />
 @[end if]@
 @[end for]@
-
+    <virtual_joint name="world_joint" type="planar" parent_frame="map" child_link="base_footprint" />
+    <passive_joint name="world_joint" />
 
 
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->

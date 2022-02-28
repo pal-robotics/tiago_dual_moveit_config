@@ -57,7 +57,8 @@
     <end_effector name="gripper_left" parent_link="arm_left_tool_link" group="gripper_left" parent_group="arm_left_torso" />
 
 
-
+    <virtual_joint name="world_joint" type="planar" parent_frame="map" child_link="base_footprint" />
+    <passive_joint name="world_joint" />
 
 
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->

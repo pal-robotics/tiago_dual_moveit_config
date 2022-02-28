@@ -105,7 +105,8 @@
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="gripper_right" parent_link="arm_right_tool_link" group="gripper_right" parent_group="arm_right_torso" />
 
-
+    <virtual_joint name="world_joint" type="planar" parent_frame="map" child_link="base_footprint" />
+    <passive_joint name="world_joint" />
 
 
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
