@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+<robot name="tiago_dual" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find tiago_dual_moveit_config)/config/srdf/disable_collisions/left_no-ee.srdf.xacro" />
+  <disable_collisions link1="wrist_left_ft_link" link2="wrist_left_ft_tool_link" reason="Adjacent"/>
+</robot>

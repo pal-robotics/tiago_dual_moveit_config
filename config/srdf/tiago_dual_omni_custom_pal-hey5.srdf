@@ -44,6 +44,7 @@
     <group name="torso">
         <joint name="torso_lift_joint" />
     </group>
+
     <group name="hand_right">
         <joint name="hand_right_index_joint" />
         <joint name="hand_right_thumb_joint" />
