@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<robot name="tiago_dual" xmlns:xacro="http://ros.org/wiki/xacro">
+  <disable_collisions link1="gripper_right_grasping_frame" link2="gripper_right_left_finger_link" reason="Never"/>
+  <disable_collisions link1="gripper_right_grasping_frame" link2="gripper_right_link" reason="Adjacent"/>
+  <disable_collisions link1="gripper_right_grasping_frame" link2="gripper_right_right_finger_link" reason="Never"/>
+  <disable_collisions link1="gripper_right_grasping_frame" link2="gripper_right_tool_link" reason="Never"/>
+  <disable_collisions link1="gripper_right_left_finger_link" link2="gripper_right_link" reason="Adjacent"/>
+  <disable_collisions link1="gripper_right_left_finger_link" link2="gripper_right_right_finger_link" reason="Never"/>
+  <disable_collisions link1="gripper_right_left_finger_link" link2="gripper_right_tool_link" reason="Never"/>
+  <disable_collisions link1="gripper_right_link" link2="gripper_right_right_finger_link" reason="Adjacent"/>
+  <disable_collisions link1="gripper_right_link" link2="gripper_right_tool_link" reason="Never"/>
+  <disable_collisions link1="gripper_right_right_finger_link" link2="gripper_right_tool_link" reason="Never"/>
+</robot>

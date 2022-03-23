@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<robot name="tiago_dual" xmlns:xacro="http://ros.org/wiki/xacro">
+  <disable_collisions link1="gripper_left_grasping_frame" link2="gripper_left_left_finger_link" reason="Never"/>
+  <disable_collisions link1="gripper_left_grasping_frame" link2="gripper_left_left_fingertip_link" reason="Never"/>
+  <disable_collisions link1="gripper_left_grasping_frame" link2="gripper_left_link" reason="Adjacent"/>
+  <disable_collisions link1="gripper_left_grasping_frame" link2="gripper_left_right_finger_link" reason="Never"/>
+  <disable_collisions link1="gripper_left_grasping_frame" link2="gripper_left_right_fingertip_link" reason="Never"/>
+  <disable_collisions link1="gripper_left_grasping_frame" link2="gripper_left_tool_link" reason="Never"/>
+  <disable_collisions link1="gripper_left_left_finger_link" link2="gripper_left_left_fingertip_link" reason="Adjacent"/>
+  <disable_collisions link1="gripper_left_left_finger_link" link2="gripper_left_link" reason="Adjacent"/>
+  <disable_collisions link1="gripper_left_left_finger_link" link2="gripper_left_right_finger_link" reason="Never"/>
+  <disable_collisions link1="gripper_left_left_finger_link" link2="gripper_left_right_fingertip_link" reason="Never"/>
+  <disable_collisions link1="gripper_left_left_finger_link" link2="gripper_left_tool_link" reason="Never"/>
+  <disable_collisions link1="gripper_left_left_fingertip_link" link2="gripper_left_link" reason="Never"/>
+  <disable_collisions link1="gripper_left_left_fingertip_link" link2="gripper_left_right_finger_link" reason="Never"/>
+  <disable_collisions link1="gripper_left_left_fingertip_link" link2="gripper_left_right_fingertip_link" reason="Never"/>
+  <disable_collisions link1="gripper_left_link" link2="gripper_left_right_finger_link" reason="Adjacent"/>
+  <disable_collisions link1="gripper_left_link" link2="gripper_left_right_fingertip_link" reason="Never"/>
+  <disable_collisions link1="gripper_left_link" link2="gripper_left_tool_link" reason="Never"/>
+  <disable_collisions link1="gripper_left_right_finger_link" link2="gripper_left_right_fingertip_link" reason="Adjacent"/>
+  <disable_collisions link1="gripper_left_right_finger_link" link2="gripper_left_tool_link" reason="Never"/>
+  <disable_collisions link1="gripper_left_tool_link" link2="gripper_left_right_fingertip_link" reason="Never"/>
+</robot>
