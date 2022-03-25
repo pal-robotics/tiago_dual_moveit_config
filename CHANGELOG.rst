@@ -2,6 +2,23 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.4.4 (2022-03-18)
+------------------
+* Merge branch 'mlu/feature/omni-base-srdf' into 'erbium-devel'
+  Add generated SRDFs for omni_base and epick
+  See merge request robots/tiago_dual_moveit_config!19
+* Add vacuum joint to end effector group of Robotiq EPick
+* Add config files for the controller of the epick
+* Add SRDFs for robotiq-epick
+* Add generated SRDFs for omni_base
+* Patch launch files to offer all configuration options
+* Merge branch 'mlu/fix/python3-repr' into 'erbium-devel'
+  Use repr() instead of backticks
+  See merge request robots/tiago_dual_moveit_config!16
+* Use repr() instead of backticks
+  backticks are deprecated in python2.7 and got removed in python3
+* Contributors: Mathias Lüdtke, davidfernandez, saikishor, thomaspeyrucain
+
 0.4.3 (2021-12-02)
 ------------------
 * Merge branch 'add_base_type' into 'erbium-devel'

@@ -19,12 +19,33 @@
   <arg name="use_gui" default="false" />
 
   <!-- Load the URDF, SRDF and other .yaml configuration files on the param server -->
-  <include file="$(find tiago_dual_moveit_config)/launch/planning_context.launch">
-    <arg name="load_robot_description" value="true"/>
-  </include>
+  <!-- Selector for tiago type -->
+  <arg name="arm_left" default="True"/>
+  <arg name="arm_right" default="True"/>
+  <arg name="end_effector_left"  default="pal-hey5"/>
+  <arg name="end_effector_right"  default="pal-hey5"/>
+  <arg name="ft_sensor_left"  default="schunk-ft"/>
+  <arg name="ft_sensor_right"  default="schunk-ft"/>
+  <arg name="laser_model"  default="sick-571"/>
+  <arg name="camera_model"  default="orbbec-astra"/>
+  <arg name="base_type"  default="pmb2"/>
+  <!-- Use moveit camera manager -->
+  <arg name="camera"  default="false"/>
 
+  <include file="$(find tiago_dual_moveit_config)/launch/planning_context.launch">
+    <arg name="load_robot_description" default="true"/>
+    <arg name="arm_left"  value="$(arg arm_left)"/>
+    <arg name="arm_right"  value="$(arg arm_right)"/>
+    <arg name="end_effector_left"  value="$(arg end_effector_left)"/>
+    <arg name="end_effector_right"  value="$(arg end_effector_right)"/>
+    <arg name="ft_sensor_left"  value="$(arg ft_sensor_left)"/>
+    <arg name="ft_sensor_right"  value="$(arg ft_sensor_right)"/>
+    <arg name="laser_model"  value="$(arg laser_model)"/>
+    <arg name="camera_model"  value="$(arg camera_model)"/>
+    <arg name="base_type"  value="$(arg base_type)"/>
+  </include>
   <!-- If needed, broadcast static tf for robot root -->
-  
+
 
   <!-- We do not have a robot connected, so publish fake joint states -->
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
@@ -41,6 +62,16 @@
     <arg name="fake_execution" value="true"/>
     <arg name="info" value="true"/>
     <arg name="debug" value="$(arg debug)"/>
+    <arg name="arm_left"  value="$(arg arm_left)"/>
+    <arg name="arm_right"  value="$(arg arm_right)"/>
+    <arg name="end_effector_left"  value="$(arg end_effector_left)"/>
+    <arg name="end_effector_right"  value="$(arg end_effector_right)"/>
+    <arg name="ft_sensor_left"  value="$(arg ft_sensor_left)"/>
+    <arg name="ft_sensor_right"  value="$(arg ft_sensor_right)"/>
+    <arg name="laser_model"  value="$(arg laser_model)"/>
+    <arg name="camera_model"  value="$(arg camera_model)"/>
+    <arg name="base_type"  value="$(arg base_type)"/>
+    <arg name="camera"  value="$(arg camera)"/>
   </include>
 
   <!-- Run Rviz and load the default config to see the state of the move_group node -->
