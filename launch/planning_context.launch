@@ -4,11 +4,8 @@
 
   <!-- The name of the parameter under which the URDF is loaded -->
   <arg name="robot_description" default="robot_description"/>
-    <arg name="arm_left"  default="True"/>
-    <arg name="arm_right"  default="True"/>
-
-  <arg name="arm_left" default="True"/>
-  <arg name="arm_right" default="True"/>
+  <arg name="arm_left" default="true"/>
+  <arg name="arm_right" default="true"/>
   <arg name="end_effector_left"  default="pal-hey5"/>
   <arg name="end_effector_right"  default="pal-hey5"/>
   <arg name="ft_sensor_left"  default="schunk-ft"/>
@@ -20,14 +17,14 @@
 
   <arg name="config_left" value="$(eval 
     ('no-arm-left' if not arm_left else 
-    (end_effector_left if end_effector_left else 'no-ee')) + 
-    ('' if not ft_sensor_left else '_'+ft_sensor_left))"/>
+    (end_effector_left if end_effector_left else 'no-ee') + 
+    ('' if not ft_sensor_left else '_'+ft_sensor_left)))"/>
 
 
   <arg name="config_right" value="$(eval 
   ('no-arm-right' if not arm_right else 
-  (end_effector_right if end_effector_right else 'no-ee')) + 
-  ('' if not ft_sensor_right else '_'+ft_sensor_right))"/>
+  (end_effector_right if end_effector_right else 'no-ee') + 
+  ('' if not ft_sensor_right else '_'+ft_sensor_right)))"/>
 
   <arg name="file_suffix" value="$(eval ('' if base_type == 'pmb2' else 'omni_') + config_left + '_' + config_right)"/>
 
