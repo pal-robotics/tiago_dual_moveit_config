@@ -2,6 +2,24 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'no-end-effector-bugfix' into 'erbium-devel'
+  No end effector bugfix
+  See merge request robots/tiago_dual_moveit_config!20
+* file_suffix consistency
+* Arm bool to True
+* Fix typo in file_suffix
+* update controllers
+* Merge branch 'no-end-effector-bugfix' of gitlab:robots/tiago_dual_moveit_config into no-end-effector-bugfix
+* add arm booleans to planning context.laucnh
+* added new srdf files
+* Merge branch 'erbium-devel' of gitlab:robots/tiago_dual_moveit_config into erbium-devel
+* add arm booleans to planning context.laucnh
+* added new srdf files
+* Edit launch files for no end-effector
+* Contributors: David ter Kuile, saikishor
+
 0.4.4 (2022-03-18)
 ------------------
 * Merge branch 'mlu/feature/omni-base-srdf' into 'erbium-devel'
