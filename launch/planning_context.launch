@@ -14,8 +14,19 @@
   <arg name="laser_model"  default="sick-571"/>
   <arg name="camera_model"  default="orbbec-astra"/>
   <arg name="base_type"  default="pmb2"/>
-  <arg name="config_left" value="$(eval ('no-arm-left' if not arm_left else end_effector_left) + ('' if not ft_sensor_left else '_'+ft_sensor_left))"/>
-  <arg name="config_right" value="$(eval ('no-arm-right' if not arm_right else end_effector_right) + ('' if not ft_sensor_right else '_'+ft_sensor_right))"/>
+
+
+  <arg name="config_left" value="$(eval 
+    ('no-arm-left' if not arm_left else 
+    (end_effector_left if end_effector_left else 'no-ee') + 
+    ('' if not ft_sensor_left else '_'+ft_sensor_left)))"/>
+
+
+  <arg name="config_right" value="$(eval 
+  ('no-arm-right' if not arm_right else 
+  (end_effector_right if end_effector_right else 'no-ee') + 
+  ('' if not ft_sensor_right else '_'+ft_sensor_right)))"/>
+
   <arg name="file_suffix" value="$(eval ('' if base_type == 'pmb2' else 'omni_') + config_left + '_' + config_right)"/>
 
   <!-- Load universal robot description format (URDF) -->

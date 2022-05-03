@@ -44,6 +44,7 @@
     <group name="torso">
         <joint name="torso_lift_joint" />
     </group>
+    <!-- <end_effector name="${name}" parent_link="${arm}_tool_link" group="${name}" parent_group="${arm}_torso" /> -->
     <group name="gripper_right">
         <link name="gripper_right_left_finger_link" />
         <link name="gripper_right_right_finger_link" />
