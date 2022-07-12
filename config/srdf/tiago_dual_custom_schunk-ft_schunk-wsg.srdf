@@ -44,7 +44,6 @@
     <group name="torso">
         <joint name="torso_lift_joint" />
     </group>
-    <!-- <end_effector name="${name}" parent_link="${arm}_tool_link" group="${name}" parent_group="${arm}_torso" /> -->
     <group name="gripper_right">
         <link name="gripper_right_left_finger_link" />
         <link name="gripper_right_right_finger_link" />
@@ -647,6 +646,7 @@
     <disable_collisions link1="arm_right_4_link" link2="arm_right_7_link" reason="Never" />
     <disable_collisions link1="arm_right_4_link" link2="arm_right_tool_link" reason="Never" />
     <disable_collisions link1="arm_right_4_link" link2="base_antenna_left_link" reason="Never" />
+    <disable_collisions link1="arm_right_4_link" link2="base_antenna_right_link" reason="Never" />
     <disable_collisions link1="arm_right_4_link" link2="base_cover_link" reason="Never" />
     <disable_collisions link1="arm_right_4_link" link2="base_footprint" reason="Never" />
     <disable_collisions link1="arm_right_4_link" link2="base_imu_link" reason="Never" />

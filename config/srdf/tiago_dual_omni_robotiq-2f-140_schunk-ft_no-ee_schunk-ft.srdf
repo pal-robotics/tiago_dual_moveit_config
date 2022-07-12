@@ -67,7 +67,6 @@
     <passive_joint name="gripper_left_right_inner_finger_joint" />
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector group="gripper_left" name="gripper_left" parent_group="arm_left_torso" parent_link="arm_left_tool_link" />
-    <!-- <end_effector name="${name}" parent_link="${arm}_tool_link" group="${name}" parent_group="${arm}_torso" /> -->
     <disable_collisions link1="arm_left_1_link" link2="arm_left_2_link" reason="Adjacent" />
     <disable_collisions link1="arm_left_1_link" link2="arm_left_3_link" reason="Never" />
     <disable_collisions link1="arm_left_1_link" link2="arm_left_4_link" reason="Never" />
@@ -1069,6 +1068,7 @@
     <disable_collisions link1="gripper_left_left_inner_finger_pad" link2="gripper_left_left_outer_finger" reason="Never" />
     <disable_collisions link1="gripper_left_left_inner_finger_pad" link2="gripper_left_left_outer_knuckle" reason="Never" />
     <disable_collisions link1="gripper_left_left_inner_finger_pad" link2="gripper_left_right_inner_finger" reason="Never" />
+    <disable_collisions link1="gripper_left_left_inner_finger_pad" link2="gripper_left_right_inner_finger_pad" reason="Never" />
     <disable_collisions link1="gripper_left_left_inner_finger_pad" link2="gripper_left_right_inner_knuckle" reason="Never" />
     <disable_collisions link1="gripper_left_left_inner_finger_pad" link2="gripper_left_right_outer_finger" reason="Never" />
     <disable_collisions link1="gripper_left_left_inner_finger_pad" link2="gripper_left_right_outer_knuckle" reason="Never" />
