@@ -2,6 +2,14 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'mlu/feature/merge-script' into 'erbium-devel'
+  Merge missing disable collision pairs
+  See merge request robots/tiago_dual_moveit_config!23
+* Merge missing disable collision pairs
+* Contributors: Mathias Lüdtke, saikishor
+
 0.5.0 (2022-05-03)
 ------------------
 * Merge branch 'no-end-effector-bugfix' into 'erbium-devel'
