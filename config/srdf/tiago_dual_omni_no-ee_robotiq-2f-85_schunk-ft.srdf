@@ -44,7 +44,6 @@
     <group name="torso">
         <joint name="torso_lift_joint" />
     </group>
-    <!-- <end_effector name="${name}" parent_link="${arm}_tool_link" group="${name}" parent_group="${arm}_torso" /> -->
     <group name="gripper_right">
         <link name="gripper_right_coupler_link" />
         <link name="gripper_right_base_link" />
@@ -1098,6 +1097,7 @@
     <disable_collisions link1="gripper_right_left_outer_finger" link2="xtion_orbbec_aux_joint_frame" reason="Never" />
     <disable_collisions link1="gripper_right_left_outer_finger" link2="xtion_rgb_frame" reason="Never" />
     <disable_collisions link1="gripper_right_left_outer_finger" link2="xtion_rgb_optical_frame" reason="Never" />
+    <disable_collisions link1="gripper_right_left_outer_knuckle" link2="gripper_right_left_outer_knuckle" reason="Never" />
     <disable_collisions link1="gripper_right_left_outer_knuckle" link2="gripper_right_right_inner_finger" reason="Never" />
     <disable_collisions link1="gripper_right_left_outer_knuckle" link2="gripper_right_right_inner_finger_pad" reason="Never" />
     <disable_collisions link1="gripper_right_left_outer_knuckle" link2="gripper_right_right_inner_knuckle" reason="Never" />
@@ -1177,6 +1177,7 @@
     <disable_collisions link1="gripper_right_right_outer_finger" link2="xtion_orbbec_aux_joint_frame" reason="Never" />
     <disable_collisions link1="gripper_right_right_outer_finger" link2="xtion_rgb_frame" reason="Never" />
     <disable_collisions link1="gripper_right_right_outer_finger" link2="xtion_rgb_optical_frame" reason="Never" />
+    <disable_collisions link1="gripper_right_right_outer_knuckle" link2="gripper_right_right_outer_knuckle" reason="Never" />
     <disable_collisions link1="gripper_right_right_outer_knuckle" link2="rgbd_laser_link" reason="Never" />
     <disable_collisions link1="gripper_right_right_outer_knuckle" link2="suspension_rear_left_link" reason="Never" />
     <disable_collisions link1="gripper_right_right_outer_knuckle" link2="virtual_base_laser_link" reason="Never" />
