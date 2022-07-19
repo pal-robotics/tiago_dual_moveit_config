@@ -2,6 +2,15 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'mlu/fix/move-scripts-out' into 'erbium-devel'
+  Use pal_moveit_config_generator and clean-up installed files
+  See merge request robots/tiago_dual_moveit_config!24
+* Show warning if package dependencies cannot be resolved
+* Use pal_moveit_config_generator and clean-up installed files
+* Contributors: Mathias Lüdtke, saikishor
+
 0.5.1 (2022-07-13)
 ------------------
 * Merge branch 'mlu/feature/merge-script' into 'erbium-devel'
