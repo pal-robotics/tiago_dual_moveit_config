@@ -1,9 +1,8 @@
 #!/bin/bash
 set -e
-
-this_folder=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+pal_moveit_config_generator="$(rospack find pal_moveit_config_generator)"
 tiago_moveit_srdf="$(rospack find tiago_moveit_config)/config/srdf"
-source "$tiago_moveit_srdf/generate_srdf.sh" "$this_folder/tiago_dual.srdf.xacro"
+source "$pal_moveit_config_generator/srdf_utils.sh" "$(dirname "${BASH_SOURCE[0]}")/../tiago_dual.srdf.xacro"
 
 ref=${1:-HEAD}
 
