@@ -2,8 +2,8 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.5.3 (2022-08-01)
+------------------
 * Merge branch 'gallium-fix' into 'erbium-devel'
   Add default_velocity_scaling_factor to avoid slow movements
   See merge request robots/tiago_dual_moveit_config!22
