@@ -12,6 +12,8 @@
   <arg name="base_type"  default="pmb2"/>
   <!-- Use moveit camera manager -->
   <arg name="camera"  default="false"/>
+  <arg name="moveit_sensor_manager" default="tiago_dual"/>
+
 
   <include file="$(find tiago_dual_moveit_config)/launch/planning_context.launch">
     <arg name="arm_left"  value="$(arg arm_left)"/>
@@ -82,7 +84,7 @@
   <!-- Sensors Functionality -->
   <group if="$(arg camera)">
     <include ns="move_group" file="$(find tiago_dual_moveit_config)/launch/sensor_manager.launch.xml" if="$(arg allow_trajectory_execution)">
-    <arg name="moveit_sensor_manager" value="tiago_dual" />
+      <arg name="moveit_sensor_manager" value="$(arg moveit_sensor_manager)"/>
   </include>
   </group>
 

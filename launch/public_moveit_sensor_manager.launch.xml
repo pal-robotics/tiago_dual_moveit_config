@@ -3,7 +3,7 @@
   <!-- This file makes it easy to include the settings for sensor managers -->
 
   <!-- Params for 3D sensors config -->
-  <rosparam command="load" file="$(find tiago_dual_moveit_config)/config/sensors_3d.yaml" />
+  <rosparam command="load" file="$(find tiago_dual_moveit_config)/config/public_sensors_3d.yaml" />
   
   <param name="octomap_frame" type="string" value="odom" />
   <param name="octomap_resolution" type="double" value="0.05" />
