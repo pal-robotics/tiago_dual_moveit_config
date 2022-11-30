@@ -7,4 +7,4 @@ sensors:
     padding_scale: 1.0
     point_cloud_topic: /throttle_filtering_points/filtered_points
     point_subsample: 1
-    sensor_plugin: occupancy_map_monitor/PalPointCloudOctomapUpdater
+    sensor_plugin: occupancy_map_monitor/PointCloudOctomapUpdater
