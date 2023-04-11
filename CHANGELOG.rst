@@ -2,8 +2,8 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.5.4 (2023-04-11)
+------------------
 * Merge branch 'updated-epick-gripper-files' into 'erbium-devel'
   Updated with update.sh script
   See merge request robots/tiago_dual_moveit_config!29
