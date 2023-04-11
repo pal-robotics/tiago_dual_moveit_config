@@ -2,6 +2,15 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'add-odom-virtual-joint' into 'erbium-devel'
+  Added virtual joint from odom to base_footprint
+  See merge request robots/tiago_dual_moveit_config!30
+* Updated files using update.sh script
+* Added virtual joint from odom to base_footprint
+* Contributors: saikishor, sergiacosta
+
 0.5.4 (2023-04-11)
 ------------------
 * Merge branch 'updated-epick-gripper-files' into 'erbium-devel'
