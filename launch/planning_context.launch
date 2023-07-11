@@ -49,6 +49,12 @@
   <param if="$(eval end_effector_left != 'custom' and end_effector_right != 'custom')" name="$(arg robot_description)_semantic" textfile="$(find tiago_dual_moveit_config)/config/srdf/tiago_dual_$(arg file_suffix).srdf" />
   <param if="$(eval end_effector_left == 'custom' or end_effector_right == 'custom')" name="$(arg robot_description)_semantic" textfile="$(find moveit_custom_dual_config)/config/srdf/tiago_dual_$(arg file_suffix).srdf" />
 
+  <!-- Load padding -->
+  <group ns="$(arg robot_description)_planning">
+    <rosparam command="load" file="$(find tiago_dual_moveit_config)/config/padding/padding_arm_left.yaml" if="$(arg arm_left)"/>
+    <rosparam command="load" file="$(find tiago_dual_moveit_config)/config/padding/padding_arm_right.yaml" if="$(arg arm_right)"/>
+  </group>
+
   <!-- Load updated joint limits (override information from URDF) -->
   <group ns="$(arg robot_description)_planning">
     <rosparam command="load" file="$(find tiago_dual_moveit_config)/config/joint_limits.yaml"/>
