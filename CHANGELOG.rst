@@ -2,6 +2,18 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'padding-update' into 'erbium-devel'
+  Add padding for right and left arm_link_5
+  See merge request robots/tiago_dual_moveit_config!32
+* Add padding for right and left arm_link_5
+* Merge branch 'mlu/fix/update-script' into 'erbium-devel'
+  Enable pipefile in update script
+  See merge request robots/tiago_dual_moveit_config!31
+* Enable pipefile in update script
+* Contributors: David ter Kuile, Sai Kishor Kothakota, sergiacosta
+
 0.5.5 (2023-04-11)
 ------------------
 * Merge branch 'add-odom-virtual-joint' into 'erbium-devel'
