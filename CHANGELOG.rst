@@ -2,8 +2,8 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.5.6 (2023-07-11)
+------------------
 * Merge branch 'padding-update' into 'erbium-devel'
   Add padding for right and left arm_link_5
   See merge request robots/tiago_dual_moveit_config!32
