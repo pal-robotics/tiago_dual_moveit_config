@@ -21,7 +21,7 @@
     <xacro:property name="ft_sensor_right" value="$(arg ft_sensor_right)"/>
     <xacro:property name="has_ft_sensor_right" value="${ft_sensor_right not in ['false', False]}"/>
     <!-- https://answers.ros.org/question/276062/adding-objects-in-moveit-fixed-in-the-world-while-the-mobile-manipulator-is-moving-confusion-with-root_joint-planning_frame-and-srdf-structure/ -->
-    <virtual_joint name="odom_to_base" child_link="base_footprint" parent_frame="odom" type="planar"/>
+    <!-- <virtual_joint name="odom_to_base" child_link="base_footprint" parent_frame="odom" type="planar"/> -->
     <xacro:if value="${base_type == 'omni_base'}">
         <xacro:property name="robot" value="tiago_dual_omni"/>
     </xacro:if>
