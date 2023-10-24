@@ -2,7 +2,6 @@
 sensors:
   - filtered_cloud_topic: filtered_cloud
     max_range: 1.5
-    max_update_rate: 1.0
     padding_offset: 0.05
     padding_scale: 1.0
     point_cloud_topic: /throttle_filtering_points/filtered_points
