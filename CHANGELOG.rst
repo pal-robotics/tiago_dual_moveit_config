@@ -2,8 +2,8 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.5.7 (2023-10-25)
+------------------
 * Merge branch 'extra-moveit-capability' into 'erbium-devel'
   Extra moveit capability octomap
   See merge request robots/tiago_dual_moveit_config!26
