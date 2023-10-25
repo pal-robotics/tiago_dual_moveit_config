@@ -2,6 +2,25 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'extra-moveit-capability' into 'erbium-devel'
+  Extra moveit capability octomap
+  See merge request robots/tiago_dual_moveit_config!26
+* Decrease padding offset
+* Remove max update rate
+* Update octomap parameters
+* Disable virtual joint between odom and base_link
+* Updated padding param
+* Update octomap params
+* Update package xml version
+* Add noetic condition on pal-moveit-plugins in package.xml
+* Add advanced_grasping launch arguments
+* Add new 3d sensor plugin for octomap and enable moveit_camera
+* set capability default back to empty
+* Add capabiliy loader plugin to move_group
+* Contributors: David ter Kuile, Sai Kishor Kothakota, sergiacosta
+
 0.5.6 (2023-07-11)
 ------------------
 * Merge branch 'padding-update' into 'erbium-devel'
