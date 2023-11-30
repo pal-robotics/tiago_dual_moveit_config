@@ -1,7 +1,0 @@
-<launch>
- <arg name="moveit_controller_manager" default="moveit_simple_controller_manager/MoveItSimpleControllerManager"/>
- <param name="moveit_controller_manager" value="$(arg moveit_controller_manager)"/>
- <arg name="robot_sufix"  default=""/>
- <rosparam unless="$(eval 'custom' in robot_sufix)" file="$(find tiago_dual_moveit_config)/config/controllers/controllers_$(arg robot_sufix).yaml"/>
- <rosparam if="$(eval 'custom' in robot_sufix)" file="$(find moveit_custom_dual_config)/config/controllers/controllers_custom.yaml"/>
-</launch>

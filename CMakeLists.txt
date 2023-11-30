@@ -1,14 +1,18 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(tiago_dual_moveit_config)
 
-find_package(catkin REQUIRED)
+find_package(ament_cmake_auto REQUIRED)
 
-catkin_package()
+ament_auto_find_build_dependencies()
 
-install(DIRECTORY launch DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-  PATTERN "setup_assistant.launch" EXCLUDE)
-install(DIRECTORY config DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-        PATTERN "disable_collisions" EXCLUDE
-        PATTERN "end_effectors" EXCLUDE
-        PATTERN "scripts" EXCLUDE
-)
+if(pal_module_cmake_FOUND)
+  pal_register_modules(module/move_group.yaml)
+endif()
+
+if(BUILD_TESTING)
+  find_package(ament_lint_auto REQUIRED)
+  ament_lint_auto_find_test_dependencies()
+endif()
+
+ament_auto_package(INSTALL_TO_SHARE launch config)
+
