@@ -2,10 +2,10 @@ moveit_controller_manager: moveit_ros_control_interface/Ros2ControlManager
 moveit_simple_controller_manager:
   controller_names:
 @[if has_arm_left]@
-  - arm_left_controller
+    - arm_left_controller
 @[end if]@
 @[if has_arm_right]@
-  - arm_right_controller
+    - arm_right_controller
 @[end if]@
     - torso_controller
     - head_controller
