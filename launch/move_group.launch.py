@@ -107,6 +107,10 @@ def start_move_group(context, *args, **kwargs):
     moveit_simple_controllers_path = (
         f'config/controllers/controllers_{hw_suffix}.yaml')
 
+    # moveit_sensors path
+    moveit_sensors_path = (
+        'config/sensors_3d.yaml')
+
     planning_scene_monitor_parameters = {
         'publish_planning_scene': True,
         'publish_geometry_updates': True,
@@ -121,6 +125,7 @@ def start_move_group(context, *args, **kwargs):
         .robot_description_kinematics(file_path=os.path.join('config', 'kinematics_kdl.yaml'))
         .trajectory_execution(moveit_simple_controllers_path)
         .planning_pipelines(pipelines=['ompl'])
+        .sensors_3d(moveit_sensors_path)
         .planning_scene_monitor(planning_scene_monitor_parameters)
         .pilz_cartesian_limits(file_path=os.path.join('config', 'pilz_cartesian_limits.yaml'))
         .to_moveit_configs()
