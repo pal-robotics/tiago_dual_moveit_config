@@ -14,5 +14,11 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
-ament_auto_package(INSTALL_TO_SHARE launch config)
+# Install the moveit setup assistant to avoid some warnings when launching move_group
+install(FILES
+    .setup_assistant
+    DESTINATION share/${PROJECT_NAME}
+)
+
+ament_auto_package(INSTALL_TO_SHARE launch config .setup_assistant)
 
