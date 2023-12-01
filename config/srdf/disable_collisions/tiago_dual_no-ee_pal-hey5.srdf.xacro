@@ -139,15 +139,15 @@
   <disable_collisions link1="hand_right_tool_link" link2="arm_right_7_link" reason="Never"/>
   <disable_collisions link1="rgbd_laser_link" link2="hand_right_grasping_frame" reason="Never"/>
   <disable_collisions link1="rgbd_laser_link" link2="hand_right_tool_link" reason="Never"/>
-  <disable_collisions link1="xtion_depth_frame" link2="hand_right_grasping_frame" reason="Never"/>
-  <disable_collisions link1="xtion_depth_frame" link2="hand_right_tool_link" reason="Never"/>
-  <disable_collisions link1="xtion_depth_optical_frame" link2="hand_right_grasping_frame" reason="Never"/>
-  <disable_collisions link1="xtion_depth_optical_frame" link2="hand_right_tool_link" reason="Never"/>
-  <disable_collisions link1="xtion_link" link2="hand_right_grasping_frame" reason="Never"/>
-  <disable_collisions link1="xtion_link" link2="hand_right_tool_link" reason="Never"/>
-  <disable_collisions link1="xtion_optical_frame" link2="hand_right_grasping_frame" reason="Never"/>
-  <disable_collisions link1="xtion_optical_frame" link2="hand_right_tool_link" reason="Never"/>
-  <disable_collisions link1="xtion_orbbec_aux_joint_frame" link2="hand_right_grasping_frame" reason="Never"/>
-  <disable_collisions link1="xtion_orbbec_aux_joint_frame" link2="hand_right_tool_link" reason="Never"/>
-  <disable_collisions link1="xtion_rgb_frame" link2="hand_right_grasping_frame" reason="Never"/>
+  <disable_collisions link1="head_front_camera_depth_frame" link2="hand_right_grasping_frame" reason="Never"/>
+  <disable_collisions link1="head_front_camera_depth_frame" link2="hand_right_tool_link" reason="Never"/>
+  <disable_collisions link1="head_front_camera_depth_optical_frame" link2="hand_right_grasping_frame" reason="Never"/>
+  <disable_collisions link1="head_front_camera_depth_optical_frame" link2="hand_right_tool_link" reason="Never"/>
+  <disable_collisions link1="head_front_camera_link" link2="hand_right_grasping_frame" reason="Never"/>
+  <disable_collisions link1="head_front_camera_link" link2="hand_right_tool_link" reason="Never"/>
+  <disable_collisions link1="head_front_camera_optical_frame" link2="hand_right_grasping_frame" reason="Never"/>
+  <disable_collisions link1="head_front_camera_optical_frame" link2="hand_right_tool_link" reason="Never"/>
+  <disable_collisions link1="head_front_camera_orbbec_aux_joint_frame" link2="hand_right_grasping_frame" reason="Never"/>
+  <disable_collisions link1="head_front_camera_orbbec_aux_joint_frame" link2="hand_right_tool_link" reason="Never"/>
+  <disable_collisions link1="head_front_camera_rgb_frame" link2="hand_right_grasping_frame" reason="Never"/>
 </robot>
