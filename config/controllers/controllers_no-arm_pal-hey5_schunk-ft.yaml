@@ -31,7 +31,7 @@ moveit_simple_controller_manager:
     joints:
       - head_1_joint
       - head_2_joint
-  hand_right_controller
+  hand_right_controller:
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     default: true

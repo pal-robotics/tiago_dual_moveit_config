@@ -63,7 +63,7 @@ moveit_simple_controller_manager:
       - head_1_joint
       - head_2_joint
 @[if end_effector_left == "pal-gripper"]@
-  gripper_left_controller
+  gripper_left_controller:
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     default: true
@@ -72,7 +72,7 @@ moveit_simple_controller_manager:
       - gripper_left_right_finger_joint
 @[end if]@
 @[if end_effector_left in ["robotiq-2f-85", "robotiq-2f-140"]]@
-  gripper_left_controller
+  gripper_left_controller:
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     default: true
@@ -80,7 +80,7 @@ moveit_simple_controller_manager:
       - gripper_left_finger_joint
 @[end if]@
 @[if end_effector_left == "pal-hey5"]@
-  hand_left_controller
+  hand_left_controller:
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     default: true
@@ -90,7 +90,7 @@ moveit_simple_controller_manager:
       - hand_left_mrl_joint
 @[end if]@
 @[if end_effector_right == "pal-gripper"]@
-  gripper_right_controller
+  gripper_right_controller:
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     default: true
@@ -99,7 +99,7 @@ moveit_simple_controller_manager:
       - gripper_right_right_finger_joint
 @[end if]@
 @[if end_effector_right in ["robotiq-2f-85", "robotiq-2f-140"]]@
-  gripper_right_controller
+  gripper_right_controller:
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     default: true
@@ -107,7 +107,7 @@ moveit_simple_controller_manager:
       - gripper_right_finger_joint
 @[end if]@
 @[if end_effector_right == "pal-hey5"]@
-  hand_right_controller
+  hand_right_controller:
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     default: true
