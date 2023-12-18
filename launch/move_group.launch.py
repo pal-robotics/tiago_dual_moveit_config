@@ -48,6 +48,11 @@ class LaunchArguments(LaunchArgumentsBase):
         name='use_sim_time',
         default_value='False',
         description='Use simulation time')
+    use_sensor_manager_arg: DeclareLaunchArgument = DeclareLaunchArgument(
+        name='use_sensor_manager',
+        default_value='False',
+        choices=['True', 'False'],
+        description='Use moveit_sensor_manager for octomap')
 
 
 def generate_launch_description():
@@ -82,6 +87,7 @@ def start_move_group(context, *args, **kwargs):
     camera_model = read_launch_argument('camera_model', context)
     laser_model = read_launch_argument('laser_model', context)
     base_type = read_launch_argument('base_type', context)
+    use_sensor_manager = read_launch_argument('use_sensor_manager', context)
 
     robot_description_path = os.path.join(
         get_package_share_directory('tiago_dual_description'), 'robots', 'tiago_dual.urdf.xacro')
@@ -118,10 +124,6 @@ def start_move_group(context, *args, **kwargs):
     moveit_simple_controllers_path = (
         f'config/controllers/controllers_{hw_suffix}.yaml')
 
-    # moveit_sensors path
-    moveit_sensors_path = (
-        'config/sensors_3d.yaml')
-
     planning_scene_monitor_parameters = {
         'publish_planning_scene': True,
         'publish_geometry_updates': True,
@@ -136,11 +138,16 @@ def start_move_group(context, *args, **kwargs):
         .robot_description_kinematics(file_path=os.path.join('config', 'kinematics_kdl.yaml'))
         .trajectory_execution(moveit_simple_controllers_path)
         .planning_pipelines(pipelines=['ompl'])
-        .sensors_3d(moveit_sensors_path)
         .planning_scene_monitor(planning_scene_monitor_parameters)
         .pilz_cartesian_limits(file_path=os.path.join('config', 'pilz_cartesian_limits.yaml'))
-        .to_moveit_configs()
     )
+
+    if use_sensor_manager:
+        # moveit_sensors path
+        moveit_sensors_path = 'config/sensors_3d.yaml'
+        moveit_config.sensors_3d(moveit_sensors_path)
+
+    moveit_config.to_moveit_configs()
 
     # Start the actual move_group node/action server
     run_move_group_node = Node(
