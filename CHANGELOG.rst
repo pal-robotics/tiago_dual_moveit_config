@@ -2,8 +2,8 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.0 (2024-01-18)
+------------------
 * Install faulty installation rule for moveit_setup_assistent file
 * Add missing ament_cmake_auto dependency
 * CMake version to 3.8
