@@ -20,5 +20,5 @@ install(FILES
     DESTINATION share/${PROJECT_NAME}
 )
 
-ament_auto_package(INSTALL_TO_SHARE launch config .setup_assistant)
+ament_auto_package(INSTALL_TO_SHARE launch config)
 
