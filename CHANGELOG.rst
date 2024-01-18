@@ -2,6 +2,27 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Install faulty installation rule for moveit_setup_assistent file
+* Add missing ament_cmake_auto dependency
+* CMake version to 3.8
+* Update linting
+* Add if statement to moveit sensor manager
+* update to  new robot argument method
+* Add license and contributing
+* Add moveit sensor params
+* Install .setup_assistant to avoid warning messages
+* update controller files
+* Change camera frame from xtion to head_front_camera
+* update cmakelist version
+* Update controller param files
+* Add module
+* Add launch files
+* Update config folder and param files
+* First commit
+* Contributors: David ter Kuile
+
 0.5.6 (2023-07-11)
 ------------------
 * Merge branch 'padding-update' into 'erbium-devel'
