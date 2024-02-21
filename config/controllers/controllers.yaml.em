@@ -13,6 +13,18 @@ controller_list:
       - arm_left_5_joint
       - arm_left_6_joint
       - arm_left_7_joint
+  - name: arm_left_velocity_controller
+    action_ns: follow_joint_trajectory
+    default: true
+    type: FollowJointTrajectory
+    joints:
+      - arm_left_1_joint
+      - arm_left_2_joint
+      - arm_left_3_joint
+      - arm_left_4_joint
+      - arm_left_5_joint
+      - arm_left_6_joint
+      - arm_left_7_joint      
 @[end if]@
 @[if has_arm_right]@
   - name: arm_right_controller
@@ -27,6 +39,18 @@ controller_list:
       - arm_right_5_joint
       - arm_right_6_joint
       - arm_right_7_joint
+  - name: arm_right_velocity_controller
+    action_ns: follow_joint_trajectory
+    default: true
+    type: FollowJointTrajectory
+    joints:
+      - arm_right_1_joint
+      - arm_right_2_joint
+      - arm_right_3_joint
+      - arm_right_4_joint
+      - arm_right_5_joint
+      - arm_right_6_joint
+      - arm_right_7_joint      
 @[end if]@
   - name: head_controller
     action_ns: follow_joint_trajectory
