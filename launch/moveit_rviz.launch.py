@@ -105,15 +105,15 @@ def start_rviz(context, *args, **kwargs):
         ft_sensor_right=ft_sensor_right,
         ft_sensor_left=ft_sensor_left)
 
-    robot_description_semantic = (f'config/srdf/tiago_dual_{hw_suffix}.srdf')
+    robot_description_semantic = (f'config/srdf/tiago_dual{hw_suffix}.srdf')
 
     if base_type == "omni_base":
         robot_description_semantic = (
-            f'config/srdf/tiago_dual_omni_{hw_suffix}.srdf')
+            f'config/srdf/tiago_dual_omni{hw_suffix}.srdf')
 
     # Trajectory Execution Functionality
     moveit_simple_controllers_path = (
-        f'config/controllers/controllers_{hw_suffix}.yaml')
+        f'config/controllers/controllers{hw_suffix}.yaml')
 
     moveit_config = (
         MoveItConfigsBuilder('tiago_dual')
