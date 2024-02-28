@@ -2,8 +2,8 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.1 (2024-02-28)
+------------------
 * Publish robot_description_semantic
 * Remove duplicated underscore for hardware suffix
 * Contributors: Noel Jimenez
