@@ -2,6 +2,12 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Publish robot_description_semantic
+* Remove duplicated underscore for hardware suffix
+* Contributors: Noel Jimenez
+
 2.0.0 (2024-01-18)
 ------------------
 * Install faulty installation rule for moveit_setup_assistent file
