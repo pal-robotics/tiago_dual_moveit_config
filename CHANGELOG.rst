@@ -2,8 +2,8 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.2 (2024-03-04)
+------------------
 * Read robot_description from the topic
 * Add missing find_package for pal_module_cmake
 * Contributors: Noel Jimenez
