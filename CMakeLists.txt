@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.8)
 project(tiago_dual_moveit_config)
 
 find_package(ament_cmake_auto REQUIRED)
+find_package(pal_module_cmake QUIET)
 
 ament_auto_find_build_dependencies()
 
