@@ -36,10 +36,6 @@ class LaunchArguments(LaunchArgumentsBase):
     end_effector_left: DeclareLaunchArgument = TiagoDualArgs.end_effector_left
     ft_sensor_right: DeclareLaunchArgument = TiagoDualArgs.ft_sensor_right
     ft_sensor_left: DeclareLaunchArgument = TiagoDualArgs.ft_sensor_left
-    wrist_model_right: DeclareLaunchArgument = TiagoDualArgs.wrist_model_right
-    wrist_model_left: DeclareLaunchArgument = TiagoDualArgs.wrist_model_left
-    camera_model: DeclareLaunchArgument = TiagoDualArgs.camera_model
-    laser_model: DeclareLaunchArgument = TiagoDualArgs.laser_model
 
     use_sim_time: DeclareLaunchArgument = DeclareLaunchArgument(
         name='use_sim_time',
@@ -74,28 +70,7 @@ def start_rviz(context, *args, **kwargs):
     end_effector_left = read_launch_argument('end_effector_left', context)
     ft_sensor_right = read_launch_argument('ft_sensor_right', context)
     ft_sensor_left = read_launch_argument('ft_sensor_left', context)
-    wrist_model_right = read_launch_argument('wrist_model_right', context)
-    wrist_model_left = read_launch_argument('wrist_model_left', context)
-    camera_model = read_launch_argument('camera_model', context)
-    laser_model = read_launch_argument('laser_model', context)
     base_type = read_launch_argument('base_type', context)
-
-    robot_description_path = os.path.join(
-        get_package_share_directory('tiago_dual_description'), 'robots', 'tiago_dual.urdf.xacro')
-
-    mappings = {
-        'arm_type_right': arm_type_right,
-        'arm_type_left': arm_type_left,
-        'end_effector_right': end_effector_right,
-        'end_effector_left': end_effector_left,
-        'ft_sensor_right': ft_sensor_right,
-        'ft_sensor_left': ft_sensor_left,
-        'wrist_model_right': wrist_model_right,
-        'wrist_model_left': wrist_model_left,
-        'camera_model': camera_model,
-        'laser_model': laser_model,
-        'base_type': base_type,
-    }
 
     hw_suffix = get_tiago_dual_hw_suffix(
         arm_right=arm_type_right,
@@ -115,9 +90,9 @@ def start_rviz(context, *args, **kwargs):
     moveit_simple_controllers_path = (
         f'config/controllers/controllers{hw_suffix}.yaml')
 
+    # The robot description is read from the topic /robot_description if the parameter is empty
     moveit_config = (
         MoveItConfigsBuilder('tiago_dual')
-        .robot_description(file_path=robot_description_path, mappings=mappings)
         .robot_description_semantic(file_path=robot_description_semantic)
         .robot_description_kinematics(file_path=os.path.join('config', 'kinematics_kdl.yaml'))
         .trajectory_execution(moveit_simple_controllers_path)
