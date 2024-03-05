@@ -127,6 +127,7 @@ def start_move_group(context, *args, **kwargs):
         package='moveit_ros_move_group',
         executable='move_group',
         output='screen',
+        emulate_tty=True,
         parameters=[
             {'use_sim_time': LaunchConfiguration('use_sim_time')},
             moveit_config.to_dict(),

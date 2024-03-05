@@ -110,6 +110,7 @@ def start_rviz(context, *args, **kwargs):
         executable='rviz2',
         output='log',
         arguments=['-d', rviz_full_config],
+        emulate_tty=True,
         parameters=[
             {},
             moveit_config.robot_description,
