@@ -2,8 +2,8 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.3 (2024-03-06)
+------------------
 * Enable log colors for move_group and rviz nodes
 * Remove .setup_assistant installation
 * Contributors: Noel Jimenez
