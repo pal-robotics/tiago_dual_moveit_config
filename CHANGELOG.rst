@@ -2,8 +2,8 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.5.8 (2024-03-11)
+------------------
 * Merge branch 'velocity_interface' into 'erbium-devel'
   velocity interface
   See merge request robots/tiago_dual_moveit_config!34
