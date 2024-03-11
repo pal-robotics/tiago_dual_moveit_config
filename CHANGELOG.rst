@@ -2,6 +2,14 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'velocity_interface' into 'erbium-devel'
+  velocity interface
+  See merge request robots/tiago_dual_moveit_config!34
+* update controllers yaml files
+* Contributors: Sai Kishor Kothakota, ileniaperrella
+
 0.5.7 (2023-10-25)
 ------------------
 * Merge branch 'extra-moveit-capability' into 'erbium-devel'
