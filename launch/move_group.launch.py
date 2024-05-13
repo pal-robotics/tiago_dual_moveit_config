@@ -78,7 +78,6 @@ def start_move_group(context, *args, **kwargs):
     end_effector_left = read_launch_argument('end_effector_left', context)
     ft_sensor_right = read_launch_argument('ft_sensor_right', context)
     ft_sensor_left = read_launch_argument('ft_sensor_left', context)
-    base_type = read_launch_argument('base_type', context)
     use_sensor_manager = read_launch_argument('use_sensor_manager', context)
 
     hw_suffix = get_tiago_dual_hw_suffix(
