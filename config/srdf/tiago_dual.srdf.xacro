@@ -6,20 +6,22 @@
 <robot name="tiago_dual" xmlns:xacro="http://ros.org/wiki/xacro">
     <xacro:arg name="base_type" default="pmb2"/>
     <xacro:property name="base_type" value="$(arg base_type)"/>
-    <xacro:arg name="arm_left" default="true"/>
+    <xacro:arg name="arm_type_left" default="tiago-arm"/>
     <xacro:arg name="end_effector_left" default="pal-hey5"/>
     <xacro:arg name="ft_sensor_left" default="schunk-ft"/>
-    <xacro:property name="has_arm_left" value="$(arg arm_left)"/>
+    <xacro:property name="arm_type_left" value="$(arg arm_type_left)"/>
+    <xacro:property name="has_arm_left" value="${arm_type_left not in ['no-arm']}"/>
     <xacro:property name="end_effector_left" value="$(arg end_effector_left)"/>
     <xacro:property name="ft_sensor_left" value="$(arg ft_sensor_left)"/>
-    <xacro:property name="has_ft_sensor_left" value="${ft_sensor_left not in ['false', False]}"/>
-    <xacro:arg name="arm_right" default="true"/>
+    <xacro:property name="has_ft_sensor_left" value="${ft_sensor_left not in ['no-ft-sensor']}"/>
+    <xacro:arg name="arm_type_right" default="tiago-arm"/>
     <xacro:arg name="end_effector_right" default="pal-hey5"/>
     <xacro:arg name="ft_sensor_right" default="schunk-ft"/>
-    <xacro:property name="has_arm_right" value="$(arg arm_right)"/>
+    <xacro:property name="arm_type_right" value="$(arg arm_type_right)"/>
+    <xacro:property name="has_arm_right" value="${arm_type_right not in ['no-arm']}"/>
     <xacro:property name="end_effector_right" value="$(arg end_effector_right)"/>
     <xacro:property name="ft_sensor_right" value="$(arg ft_sensor_right)"/>
-    <xacro:property name="has_ft_sensor_right" value="${ft_sensor_right not in ['false', False]}"/>
+    <xacro:property name="has_ft_sensor_right" value="${ft_sensor_right not in ['no-ft-sensor']}"/>
     <!-- https://answers.ros.org/question/276062/adding-objects-in-moveit-fixed-in-the-world-while-the-mobile-manipulator-is-moving-confusion-with-root_joint-planning_frame-and-srdf-structure/ -->
     <virtual_joint name="odom_to_base" child_link="base_footprint" parent_frame="odom" type="planar"/>
     <xacro:if value="${base_type == 'omni_base'}">
@@ -28,6 +30,16 @@
     <xacro:unless value="${base_type == 'omni_base'}">
         <xacro:property name="robot" value="tiago_dual"/>
     </xacro:unless>
+    <xacro:property name="end_effector_left_arg" value="$(arg end_effector_left)"/>
+    <xacro:property name="end_effector_right_arg" value="$(arg end_effector_right)"/>
+
+    <xacro:if value="${end_effector_left == 'no-end-effector'}">
+        <xacro:property name="end_effector_left_arg" value="no-ee"/>
+    </xacro:if>
+    <xacro:if value="${end_effector_right == 'no-end-effector'}">
+        <xacro:property name="end_effector_right_arg" value="no-ee"/>
+    </xacro:if>
+
     <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
     <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
     <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
@@ -51,10 +63,10 @@
 </xacro:macro>
 
 <xacro:if value="${has_arm_left}">
-<xacro:arm_groups side="left"/>
+    <xacro:arm_groups side="left"/>
 </xacro:if>
 <xacro:if value="${has_arm_right}">
-<xacro:arm_groups side="right"/>
+    <xacro:arm_groups side="right"/>
 </xacro:if>
 <xacro:if value="${has_arm_left and has_arm_right}">
     <group name="both_arms_torso">
@@ -74,10 +86,10 @@
 <xacro:if value="${has_arm_left}">
     <xacro:end_effector_for_side side="left" end_effector="${end_effector_left}"/>
     <xacro:if value="${has_ft_sensor_left}">
-        <xacro:property name="config_left" value="${end_effector_left}_${ft_sensor_left}"/>
+        <xacro:property name="config_left" value="${end_effector_left_arg}_${ft_sensor_left}"/>
     </xacro:if>
     <xacro:unless value="${has_ft_sensor_left}">
-        <xacro:property name="config_left" value="${end_effector_left}"/>
+        <xacro:property name="config_left" value="${end_effector_left_arg}"/>
     </xacro:unless>
 </xacro:if>
 <xacro:unless value="${has_arm_left}">
@@ -87,15 +99,15 @@
 <xacro:if value="${has_arm_right}">
     <xacro:end_effector_for_side side="right" end_effector="${end_effector_right}"/>
     <xacro:if value="${has_ft_sensor_right}">
-        <xacro:property name="config_right" value="${end_effector_right}_${ft_sensor_right}"/>
+        <xacro:property name="config_right" value="${end_effector_right_arg}_${ft_sensor_right}"/>
     </xacro:if>
     <xacro:unless value="${has_ft_sensor_right}">
-        <xacro:property name="config_right" value="${end_effector_right}"/>
+        <xacro:property name="config_right" value="${end_effector_right_arg}"/>
     </xacro:unless>
 </xacro:if>
 <xacro:unless value="${has_arm_right}">
     <xacro:property name="config_right" value="no-arm-right"/>
 </xacro:unless>
-
 <xacro:include filename="$(find tiago_dual_moveit_config)/config/srdf/disable_collisions/${robot}_${config_left}_${config_right}.srdf.xacro" />
+
 </robot>
