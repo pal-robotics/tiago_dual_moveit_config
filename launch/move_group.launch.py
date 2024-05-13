@@ -13,6 +13,7 @@
 # limitations under the License.
 
 import os
+from pathlib import Path
 
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, OpaqueFunction
@@ -26,6 +27,7 @@ from launch_pal.robot_arguments import TiagoDualArgs
 from tiago_dual_description.tiago_dual_launch_utils import get_tiago_dual_hw_suffix
 
 from dataclasses import dataclass
+from ament_index_python.packages import get_package_share_directory
 
 
 @dataclass(frozen=True)
@@ -87,11 +89,23 @@ def start_move_group(context, *args, **kwargs):
         ft_sensor_right=ft_sensor_right,
         ft_sensor_left=ft_sensor_left)
 
-    robot_description_semantic = (f'config/srdf/tiago_dual{hw_suffix}.srdf')
+    srdf_file_path = Path(
+        os.path.join(
+            get_package_share_directory("tiago_dual_moveit_config"),
+            "config", "srdf",
+            "tiago_dual.srdf.xacro",
+        )
+    )
 
-    if base_type == "omni_base":
-        robot_description_semantic = (
-            f'config/srdf/tiago_dual_omni{hw_suffix}.srdf')
+    srdf_input_args = {
+        "arm_type_right": read_launch_argument("arm_type_right", context),
+        "arm_type_left": read_launch_argument("arm_type_left", context),
+        "end_effector_right": read_launch_argument("end_effector_right", context),
+        "end_effector_left": read_launch_argument("end_effector_left", context),
+        "ft_sensor_right": read_launch_argument("ft_sensor_right", context),
+        "ft_sensor_left": read_launch_argument("ft_sensor_left", context),
+        "base_type": read_launch_argument("base_type", context),
+    }
 
     # Trajectory Execution Functionality
     moveit_simple_controllers_path = (
@@ -107,7 +121,7 @@ def start_move_group(context, *args, **kwargs):
     # The robot description is read from the topic /robot_description if the parameter is empty
     moveit_config = (
         MoveItConfigsBuilder('tiago_dual')
-        .robot_description_semantic(file_path=robot_description_semantic)
+        .robot_description_semantic(file_path=srdf_file_path, mappings=srdf_input_args)
         .robot_description_kinematics(file_path=os.path.join('config', 'kinematics_kdl.yaml'))
         .trajectory_execution(moveit_simple_controllers_path)
         .planning_pipelines(pipelines=['ompl'])
