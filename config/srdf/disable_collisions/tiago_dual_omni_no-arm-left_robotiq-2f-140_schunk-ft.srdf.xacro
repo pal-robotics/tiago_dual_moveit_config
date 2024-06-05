@@ -8,6 +8,7 @@
     <disable_collisions link1="arm_right_1_link" link2="gripper_right_grasping_frame_Y" reason="Never"/>
     <disable_collisions link1="arm_right_1_link" link2="gripper_right_grasping_frame_Z" reason="Never"/>
     <disable_collisions link1="arm_right_1_link" link2="gripper_right_left_outer_knuckle" reason="Never"/>
+    <disable_collisions link1="arm_right_1_link" link2="gripper_right_right_outer_knuckle" reason="Never"/>
     <disable_collisions link1="arm_right_1_link" link2="wrist_right_ft_link" reason="Never"/>
     <disable_collisions link1="arm_right_1_link" link2="wrist_right_ft_tool_link" reason="Never"/>
     <disable_collisions link1="arm_right_2_link" link2="gripper_right_base_link" reason="Never"/>
@@ -42,7 +43,6 @@
     <disable_collisions link1="arm_right_3_link" link2="gripper_right_right_inner_knuckle" reason="Never"/>
     <disable_collisions link1="arm_right_3_link" link2="gripper_right_right_outer_finger" reason="Never"/>
     <disable_collisions link1="arm_right_3_link" link2="gripper_right_right_outer_knuckle" reason="Never"/>
-    <disable_collisions link1="arm_right_3_link" link2="head_2_link" reason="Never"/>
     <disable_collisions link1="arm_right_3_link" link2="wrist_right_ft_link" reason="Never"/>
     <disable_collisions link1="arm_right_3_link" link2="wrist_right_ft_tool_link" reason="Never"/>
     <disable_collisions link1="arm_right_4_link" link2="gripper_right_base_link" reason="Never"/>
@@ -130,6 +130,7 @@
     <disable_collisions link1="arm_right_tool_link" link2="gripper_right_right_outer_knuckle" reason="Never"/>
     <disable_collisions link1="arm_right_tool_link" link2="wrist_right_ft_link" reason="Adjacent"/>
     <disable_collisions link1="arm_right_tool_link" link2="wrist_right_ft_tool_link" reason="Never"/>
+    <disable_collisions link1="base_antenna_left_link" link2="gripper_right_coupler_link" reason="Never"/>
     <disable_collisions link1="base_antenna_left_link" link2="gripper_right_grasping_frame" reason="Never"/>
     <disable_collisions link1="base_antenna_left_link" link2="gripper_right_grasping_frame_Y" reason="Never"/>
     <disable_collisions link1="base_antenna_left_link" link2="gripper_right_grasping_frame_Z" reason="Never"/>
@@ -186,7 +187,10 @@
     <disable_collisions link1="base_rear_laser_link" link2="gripper_right_grasping_frame" reason="Never"/>
     <disable_collisions link1="base_rear_laser_link" link2="gripper_right_grasping_frame_Y" reason="Never"/>
     <disable_collisions link1="base_rear_laser_link" link2="gripper_right_grasping_frame_Z" reason="Never"/>
+    <disable_collisions link1="base_rear_laser_link" link2="gripper_right_left_inner_knuckle" reason="Never"/>
+    <disable_collisions link1="base_rear_laser_link" link2="gripper_right_left_outer_finger" reason="Never"/>
     <disable_collisions link1="base_rear_laser_link" link2="gripper_right_left_outer_knuckle" reason="Never"/>
+    <disable_collisions link1="base_rear_laser_link" link2="gripper_right_right_inner_finger" reason="Never"/>
     <disable_collisions link1="base_rear_laser_link" link2="gripper_right_right_outer_finger" reason="Never"/>
     <disable_collisions link1="base_rear_laser_link" link2="gripper_right_right_outer_knuckle" reason="Never"/>
     <disable_collisions link1="base_rear_laser_link" link2="wrist_right_ft_link" reason="Never"/>
@@ -200,6 +204,7 @@
     <disable_collisions link1="gripper_right_base_link" link2="head_front_camera_rgb_optical_frame" reason="Never"/>
     <disable_collisions link1="gripper_right_base_link" link2="suspension_rear_left_link" reason="Never"/>
     <disable_collisions link1="gripper_right_base_link" link2="virtual_base_laser_link" reason="Never"/>
+    <disable_collisions link1="gripper_right_base_link" link2="wheel_front_left_link" reason="Never"/>
     <disable_collisions link1="gripper_right_base_link" link2="wheel_rear_left_link" reason="Never"/>
     <disable_collisions link1="gripper_right_coupler_link" link2="head_front_camera_depth_frame" reason="Never"/>
     <disable_collisions link1="gripper_right_coupler_link" link2="head_front_camera_depth_optical_frame" reason="Never"/>
@@ -316,6 +321,7 @@
     <disable_collisions link1="gripper_right_left_outer_knuckle" link2="head_front_camera_rgb_frame" reason="Never"/>
     <disable_collisions link1="gripper_right_left_outer_knuckle" link2="head_front_camera_rgb_optical_frame" reason="Never"/>
     <disable_collisions link1="gripper_right_left_outer_knuckle" link2="virtual_base_laser_link" reason="Never"/>
+    <disable_collisions link1="gripper_right_left_outer_knuckle" link2="wheel_front_left_link" reason="Never"/>
     <disable_collisions link1="gripper_right_left_outer_knuckle" link2="wheel_rear_left_link" reason="Never"/>
     <disable_collisions link1="gripper_right_right_inner_finger" link2="head_front_camera_depth_frame" reason="Never"/>
     <disable_collisions link1="gripper_right_right_inner_finger" link2="head_front_camera_depth_optical_frame" reason="Never"/>
@@ -341,6 +347,7 @@
     <disable_collisions link1="gripper_right_right_inner_knuckle" link2="head_front_camera_rgb_frame" reason="Never"/>
     <disable_collisions link1="gripper_right_right_inner_knuckle" link2="head_front_camera_rgb_optical_frame" reason="Never"/>
     <disable_collisions link1="gripper_right_right_inner_knuckle" link2="virtual_base_laser_link" reason="Never"/>
+    <disable_collisions link1="gripper_right_right_inner_knuckle" link2="wheel_rear_left_link" reason="Never"/>
     <disable_collisions link1="gripper_right_right_outer_finger" link2="head_front_camera_depth_frame" reason="Never"/>
     <disable_collisions link1="gripper_right_right_outer_finger" link2="head_front_camera_depth_optical_frame" reason="Never"/>
     <disable_collisions link1="gripper_right_right_outer_finger" link2="head_front_camera_link" reason="Never"/>
@@ -349,6 +356,7 @@
     <disable_collisions link1="gripper_right_right_outer_finger" link2="head_front_camera_rgb_frame" reason="Never"/>
     <disable_collisions link1="gripper_right_right_outer_finger" link2="head_front_camera_rgb_optical_frame" reason="Never"/>
     <disable_collisions link1="gripper_right_right_outer_finger" link2="virtual_base_laser_link" reason="Never"/>
+    <disable_collisions link1="gripper_right_right_outer_finger" link2="wheel_rear_left_link" reason="Never"/>
     <disable_collisions link1="gripper_right_right_outer_knuckle" link2="head_front_camera_depth_frame" reason="Never"/>
     <disable_collisions link1="gripper_right_right_outer_knuckle" link2="head_front_camera_depth_optical_frame" reason="Never"/>
     <disable_collisions link1="gripper_right_right_outer_knuckle" link2="head_front_camera_link" reason="Never"/>
@@ -356,8 +364,10 @@
     <disable_collisions link1="gripper_right_right_outer_knuckle" link2="head_front_camera_orbbec_aux_joint_frame" reason="Never"/>
     <disable_collisions link1="gripper_right_right_outer_knuckle" link2="head_front_camera_rgb_frame" reason="Never"/>
     <disable_collisions link1="gripper_right_right_outer_knuckle" link2="head_front_camera_rgb_optical_frame" reason="Never"/>
+    <disable_collisions link1="gripper_right_right_outer_knuckle" link2="suspension_front_left_link" reason="Never"/>
     <disable_collisions link1="gripper_right_right_outer_knuckle" link2="suspension_rear_left_link" reason="Never"/>
     <disable_collisions link1="gripper_right_right_outer_knuckle" link2="virtual_base_laser_link" reason="Never"/>
+    <disable_collisions link1="gripper_right_right_outer_knuckle" link2="wheel_front_left_link" reason="Never"/>
     <disable_collisions link1="gripper_right_right_outer_knuckle" link2="wheel_rear_left_link" reason="Never"/>
     <disable_collisions link1="head_front_camera_depth_frame" link2="wrist_right_ft_link" reason="Never"/>
     <disable_collisions link1="head_front_camera_depth_frame" link2="wrist_right_ft_tool_link" reason="Never"/>
