@@ -2,8 +2,8 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.4 (2024-06-10)
+------------------
 * Merge branch 'feat/motions' into 'humble-devel'
   modify robotiq dissable collision files
   See merge request robots/tiago_dual_moveit_config!43
