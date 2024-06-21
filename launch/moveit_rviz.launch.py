@@ -21,7 +21,7 @@ from launch_pal.arg_utils import read_launch_argument
 from launch_ros.actions import Node
 
 from moveit_configs_utils import MoveItConfigsBuilder
-from launch_pal.robot_arguments import TiagoDualArgs
+from tiago_dual_description.launch_arguments import TiagoDualArgs
 from tiago_dual_description.tiago_dual_launch_utils import get_tiago_dual_hw_suffix
 from launch_pal.arg_utils import LaunchArgumentsBase
 from dataclasses import dataclass
