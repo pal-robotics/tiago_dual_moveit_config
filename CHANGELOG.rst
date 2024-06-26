@@ -2,6 +2,14 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'dtk/move-robot-args' into 'humble-devel'
+  Change import for launch args
+  See merge request robots/tiago_dual_moveit_config!44
+* Change import for launch args
+* Contributors: David ter Kuile, davidterkuile
+
 2.0.4 (2024-06-10)
 ------------------
 * Merge branch 'feat/motions' into 'humble-devel'
