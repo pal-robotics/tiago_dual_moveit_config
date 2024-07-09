@@ -2,8 +2,8 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.6 (2024-07-09)
+------------------
 * Add warning for pal_module_cmake not found
 * Contributors: Noel Jimenez
 
