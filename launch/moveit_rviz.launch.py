@@ -13,6 +13,7 @@
 # limitations under the License.
 
 import os
+from pathlib import Path
 
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
@@ -24,6 +25,7 @@ from moveit_configs_utils import MoveItConfigsBuilder
 from tiago_dual_description.launch_arguments import TiagoDualArgs
 from tiago_dual_description.tiago_dual_launch_utils import get_tiago_dual_hw_suffix
 from launch_pal.arg_utils import LaunchArgumentsBase
+from launch_pal.robot_arguments import CommonArgs
 from dataclasses import dataclass
 
 
@@ -36,11 +38,7 @@ class LaunchArguments(LaunchArgumentsBase):
     end_effector_left: DeclareLaunchArgument = TiagoDualArgs.end_effector_left
     ft_sensor_right: DeclareLaunchArgument = TiagoDualArgs.ft_sensor_right
     ft_sensor_left: DeclareLaunchArgument = TiagoDualArgs.ft_sensor_left
-
-    use_sim_time: DeclareLaunchArgument = DeclareLaunchArgument(
-        name='use_sim_time',
-        default_value='False',
-        description='Use simulation time')
+    use_sim_time: DeclareLaunchArgument = CommonArgs.use_sim_time
 
 
 def generate_launch_description():
@@ -64,27 +62,37 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
 
 def start_rviz(context, *args, **kwargs):
 
+    base_type = read_launch_argument("base_type", context)
     arm_type_right = read_launch_argument('arm_type_right', context)
     arm_type_left = read_launch_argument('arm_type_left', context)
     end_effector_right = read_launch_argument('end_effector_right', context)
     end_effector_left = read_launch_argument('end_effector_left', context)
     ft_sensor_right = read_launch_argument('ft_sensor_right', context)
     ft_sensor_left = read_launch_argument('ft_sensor_left', context)
-    base_type = read_launch_argument('base_type', context)
 
     hw_suffix = get_tiago_dual_hw_suffix(
         arm_right=arm_type_right,
         arm_left=arm_type_left,
         end_effector_right=end_effector_right,
-        end_effector_left=end_effector_left,
-        ft_sensor_right=ft_sensor_right,
-        ft_sensor_left=ft_sensor_left)
+        end_effector_left=end_effector_left)
 
-    robot_description_semantic = (f'config/srdf/tiago_dual{hw_suffix}.srdf')
+    srdf_file_path = Path(
+        os.path.join(
+            get_package_share_directory("tiago_dual_moveit_config"),
+            "config", "srdf",
+            "tiago_dual.srdf.xacro",
+        )
+    )
 
-    if base_type == "omni_base":
-        robot_description_semantic = (
-            f'config/srdf/tiago_dual_omni{hw_suffix}.srdf')
+    srdf_input_args = {
+        "arm_type_right": arm_type_right,
+        "arm_type_left": arm_type_left,
+        "end_effector_right": end_effector_right,
+        "end_effector_left": end_effector_left,
+        "ft_sensor_right": ft_sensor_right,
+        "ft_sensor_left": ft_sensor_left,
+        "base_type": base_type,
+    }
 
     # Trajectory Execution Functionality
     moveit_simple_controllers_path = (
@@ -93,7 +101,7 @@ def start_rviz(context, *args, **kwargs):
     # The robot description is read from the topic /robot_description if the parameter is empty
     moveit_config = (
         MoveItConfigsBuilder('tiago_dual')
-        .robot_description_semantic(file_path=robot_description_semantic)
+        .robot_description_semantic(file_path=srdf_file_path, mappings=srdf_input_args)
         .robot_description_kinematics(file_path=os.path.join('config', 'kinematics_kdl.yaml'))
         .trajectory_execution(moveit_simple_controllers_path)
         .planning_pipelines(pipelines=['ompl'])
