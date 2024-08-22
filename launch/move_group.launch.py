@@ -84,9 +84,7 @@ def start_move_group(context, *args, **kwargs):
         arm_right=arm_type_right,
         arm_left=arm_type_left,
         end_effector_right=end_effector_right,
-        end_effector_left=end_effector_left,
-        ft_sensor_right=ft_sensor_right,
-        ft_sensor_left=ft_sensor_left)
+        end_effector_left=end_effector_left)
 
     srdf_file_path = Path(
         os.path.join(
