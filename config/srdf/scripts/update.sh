@@ -2,11 +2,11 @@
 set -e
 set -o pipefail
 pal_moveit_config_generator=$(ros2 pkg prefix pal_moveit_config_generator)
-tiago_moveit_srdf="$(ros2 pkg prefix tiago_moveit_config)/share/tiago_moveit_config/config/srdf"
+tiago_dual_moveit_srdf="$(ros2 pkg prefix tiago_dual_moveit_config)/share/tiago_dual_moveit_config/config/srdf"
 source "$pal_moveit_config_generator/share/pal_moveit_config_generator/srdf_utils.sh" "$(dirname "${BASH_SOURCE[0]}")/../tiago_dual.srdf.xacro"
 
 end_effectors=()
-for end_effector_file in "$tiago_moveit_srdf"/end_effectors/*.srdf.xacro; do
+for end_effector_file in "$tiago_dual_moveit_srdf"/end_effectors/*.srdf.xacro; do
      end_effectors+=($(basename "$end_effector_file" .srdf.xacro))
 done
 ft_sensors=(no-ft-sensor schunk-ft)

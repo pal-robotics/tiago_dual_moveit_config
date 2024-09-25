@@ -79,7 +79,7 @@
         <joint name="torso_lift_joint" />
     </group>
     <xacro:macro name="end_effector_for_side" params="side end_effector">
-        <xacro:include filename="$(find tiago_moveit_config)/config/srdf/end_effectors/${end_effector}.srdf.xacro" />
+        <xacro:include filename="$(find tiago_dual_moveit_config)/config/srdf/end_effectors/${end_effector}.srdf.xacro" />
     <xacro:define_end_effector arm="arm_${side}" name="${end_effector_name}_${side}"/>
 </xacro:macro>
 
