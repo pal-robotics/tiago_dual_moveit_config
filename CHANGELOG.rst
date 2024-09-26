@@ -2,8 +2,8 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.7 (2024-09-26)
+------------------
 * Merge branch 'tpe/fix_and_add_dependency' into 'humble-devel'
   Fix unwanted files + solve dependency issues
   See merge request robots/tiago_dual_moveit_config!47
