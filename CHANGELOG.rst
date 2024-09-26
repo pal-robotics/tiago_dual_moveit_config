@@ -2,6 +2,15 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'tpe/fix_and_add_dependency' into 'humble-devel'
+  Fix unwanted files + solve dependency issues
+  See merge request robots/tiago_dual_moveit_config!47
+* Copy paste end effector config from tiagomove_it_config because the module move_group was clashing with it and bad idea to have both config should be extracted from both in the future
+* Add temporal dependency + fix unwanted files
+* Contributors: thomas.peyrucain, thomaspeyrucain
+
 2.0.6 (2024-07-09)
 ------------------
 * Add warning for pal_module_cmake not found
