@@ -23,6 +23,7 @@ from launch_ros.actions import Node
 
 from moveit_configs_utils import MoveItConfigsBuilder
 from launch_pal.arg_utils import LaunchArgumentsBase
+from launch_pal.robot_arguments import CommonArgs
 from tiago_dual_description.launch_arguments import TiagoDualArgs
 from tiago_dual_description.tiago_dual_launch_utils import get_tiago_dual_hw_suffix
 
@@ -39,16 +40,8 @@ class LaunchArguments(LaunchArgumentsBase):
     end_effector_left: DeclareLaunchArgument = TiagoDualArgs.end_effector_left
     ft_sensor_right: DeclareLaunchArgument = TiagoDualArgs.ft_sensor_right
     ft_sensor_left: DeclareLaunchArgument = TiagoDualArgs.ft_sensor_left
-
-    use_sim_time: DeclareLaunchArgument = DeclareLaunchArgument(
-        name='use_sim_time',
-        default_value='False',
-        description='Use simulation time')
-    use_sensor_manager_arg: DeclareLaunchArgument = DeclareLaunchArgument(
-        name='use_sensor_manager',
-        default_value='False',
-        choices=['True', 'False'],
-        description='Use moveit_sensor_manager for octomap')
+    use_sim_time: DeclareLaunchArgument = CommonArgs.use_sim_time
+    use_sensor_manager: DeclareLaunchArgument = CommonArgs.use_sensor_manager
 
 
 def generate_launch_description():
@@ -72,6 +65,7 @@ def declare_actions(launch_description: LaunchDescription, launch_args: LaunchAr
 
 def start_move_group(context, *args, **kwargs):
 
+    base_type = read_launch_argument("base_type", context)
     arm_type_right = read_launch_argument('arm_type_right', context)
     arm_type_left = read_launch_argument('arm_type_left', context)
     end_effector_right = read_launch_argument('end_effector_right', context)
@@ -84,9 +78,7 @@ def start_move_group(context, *args, **kwargs):
         arm_right=arm_type_right,
         arm_left=arm_type_left,
         end_effector_right=end_effector_right,
-        end_effector_left=end_effector_left,
-        ft_sensor_right=ft_sensor_right,
-        ft_sensor_left=ft_sensor_left)
+        end_effector_left=end_effector_left)
 
     srdf_file_path = Path(
         os.path.join(
@@ -97,13 +89,13 @@ def start_move_group(context, *args, **kwargs):
     )
 
     srdf_input_args = {
-        "arm_type_right": read_launch_argument("arm_type_right", context),
-        "arm_type_left": read_launch_argument("arm_type_left", context),
-        "end_effector_right": read_launch_argument("end_effector_right", context),
-        "end_effector_left": read_launch_argument("end_effector_left", context),
-        "ft_sensor_right": read_launch_argument("ft_sensor_right", context),
-        "ft_sensor_left": read_launch_argument("ft_sensor_left", context),
-        "base_type": read_launch_argument("base_type", context),
+        "arm_type_right": arm_type_right,
+        "arm_type_left": arm_type_left,
+        "end_effector_right": end_effector_right,
+        "end_effector_left": end_effector_left,
+        "ft_sensor_right": ft_sensor_right,
+        "ft_sensor_left": ft_sensor_left,
+        "base_type": base_type,
     }
 
     # Trajectory Execution Functionality
