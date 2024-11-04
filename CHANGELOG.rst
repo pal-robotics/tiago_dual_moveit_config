@@ -2,8 +2,8 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.8 (2024-11-04)
+------------------
 * Merge branch 'dtk/update-em-generation' into 'humble-devel'
   Dtk/update em generation
   See merge request robots/tiago_dual_moveit_config!46
