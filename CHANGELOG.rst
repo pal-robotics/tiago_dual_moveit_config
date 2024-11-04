@@ -2,6 +2,15 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'dtk/update-em-generation' into 'humble-devel'
+  Dtk/update em generation
+  See merge request robots/tiago_dual_moveit_config!46
+* Clean launch file structure
+* Clean redundant controller.yaml files
+* Contributors: David ter Kuile, davidterkuile
+
 2.0.7 (2024-09-26)
 ------------------
 * Merge branch 'tpe/fix_and_add_dependency' into 'humble-devel'
