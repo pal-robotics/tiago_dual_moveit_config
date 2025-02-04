@@ -136,7 +136,8 @@ def start_move_group(context, *args, **kwargs):
         parameters=[
             {'use_sim_time': LaunchConfiguration('use_sim_time')},
             moveit_config.to_dict(),
-            {'publish_robot_description_semantic': True}
+            {'publish_robot_description_semantic': True,
+             'robot_description_timeout': 60.0},
         ],
     )
 
