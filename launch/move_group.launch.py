@@ -127,18 +127,24 @@ def start_move_group(context, *args, **kwargs):
 
     moveit_config.to_moveit_configs()
 
+    move_group_configuration = {
+        'use_sim_time': LaunchConfiguration('use_sim_time'),
+        'publish_robot_description_semantic': True,
+        'robot_description_timeout': 60.0,
+    }
+
+    move_group_params = [
+        moveit_config.to_dict(),
+        move_group_configuration,
+    ]
+
     # Start the actual move_group node/action server
     run_move_group_node = Node(
         package='moveit_ros_move_group',
         executable='move_group',
         output='screen',
         emulate_tty=True,
-        parameters=[
-            {'use_sim_time': LaunchConfiguration('use_sim_time')},
-            moveit_config.to_dict(),
-            {'publish_robot_description_semantic': True,
-             'robot_description_timeout': 60.0},
-        ],
+        parameters=move_group_params,
     )
 
     return [run_move_group_node]
