@@ -2,6 +2,12 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Group parameters in a variable
+* Set robot_description_timeout to 60 seconds
+* Contributors: Noel Jimenez
+
 2.0.8 (2024-11-04)
 ------------------
 * Merge branch 'dtk/update-em-generation' into 'humble-devel'
