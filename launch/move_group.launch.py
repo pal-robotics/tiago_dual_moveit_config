@@ -107,6 +107,7 @@ def start_move_group(context, *args, **kwargs):
         'publish_geometry_updates': True,
         'publish_state_updates': True,
         'publish_transforms_updates': True,
+        "publish_robot_description": True
     }
 
     # The robot description is read from the topic /robot_description if the parameter is empty
@@ -115,7 +116,10 @@ def start_move_group(context, *args, **kwargs):
         .robot_description_semantic(file_path=srdf_file_path, mappings=srdf_input_args)
         .robot_description_kinematics(file_path=os.path.join('config', 'kinematics_kdl.yaml'))
         .trajectory_execution(moveit_simple_controllers_path)
-        .planning_pipelines(pipelines=['ompl'])
+        .joint_limits(file_path=os.path.join('config', 'joint_limits.yaml'))
+        .planning_pipelines(
+            pipelines=["ompl", "chomp"], default_planning_pipeline="ompl"
+        )
         .planning_scene_monitor(planning_scene_monitor_parameters)
         .pilz_cartesian_limits(file_path=os.path.join('config', 'pilz_cartesian_limits.yaml'))
     )
