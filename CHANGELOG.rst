@@ -2,8 +2,8 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.10 (2025-03-21)
+-------------------
 * update move_group launch
 * virtual joint removal
 * cheks if the string 'use_sensor_manager' is equal to true
