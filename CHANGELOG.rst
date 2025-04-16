@@ -2,6 +2,11 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* ineractive marker
+* Contributors: Vamsi GUDA
+
 2.0.10 (2025-03-21)
 -------------------
 * update move_group launch
