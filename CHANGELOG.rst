@@ -2,8 +2,8 @@
 Changelog for package tiago_dual_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.12 (2026-11-18)
+-------------------
 * Bump cmake_minimum_required to 3.10
 * Contributors: Mathias Lüdtke
 
